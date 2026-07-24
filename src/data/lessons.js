@@ -1,1169 +1,3164 @@
 export const lessons = [
   {
     "id": "lesson-1",
-    "lessonNum": "第一課",
-    "lessonName": "遇見自己",
-    "author": "王洛夫",
-    "task1": [
+    "lessonNum": "第一單元",
+    "lessonName": "日治時期臺灣的發展與變遷",
+    "summary": [
       {
         "indent": 1,
-        "text": "一. 閱讀理解提問"
-      },
-      {
-        "indent": 1,
-        "text": "1.作者為何會遇見皺巴巴的自己？"
+        "text": "日本的統治措施如何影響臺灣人民？"
       },
       {
         "indent": 2,
-        "text": "*因為風揚起池水的波紋*"
-      },
-      {
-        "indent": 1,
-        "text": "2.作者把「葉縫裡透出的小眼睛」形容成什麼？"
-      },
-      {
-        "indent": 2,
-        "text": "*有如家人和師長同學，好奇看著波光裡的自己*"
-      },
-      {
-        "indent": 1,
-        "text": "3.作者三個問題的提問對象分別是什麼？有什麼意涵？（從□找出答案）"
-      },
-      {
-        "indent": 2,
-        "text": "【選項】：學習的真諦要勇於接受挑戰，才能突破現狀，展翅高飛。 / 團體群性要懂得為人著想，才能擁有美好的人際關係。 / 唯有正向思考，才能握有讓自己更好的鑰匙。",
-        "isBox": true
-      },
-      {
-        "indent": 2,
-        "text": "①請問：覓食的小魚，熱情卻愛捉弄人的笑容，能不能找到真摯的友情。"
+        "text": "日本在臺灣的統治"
       },
       {
         "indent": 3,
-        "text": "意涵：*團體群性要懂得為人著想，才能擁有美好的人際關係。*"
+        "text": "清帝國在西元(*1894*)年與日本爆發(*甲午戰爭*)，隔年戰敗"
       },
       {
-        "indent": 2,
-        "text": "②請問：自由自在的蝴蝶，想學習又貪玩的心情，能不能破蛹飛起張開夢想的彩翼。"
-      },
-      {
-        "indent": 3,
-        "text": "意涵：*學習的真諦要勇於接受挑戰，才能突破現狀，展翅高飛。*"
-      },
-      {
-        "indent": 2,
-        "text": "③請問：耀眼的陽光，明亮的優點和陰暗的缺點，是天註定或由我決定。"
+        "indent": 4,
+        "text": "→簽訂馬關條約，割讓臺灣、澎湖給日本"
       },
       {
         "indent": 3,
-        "text": "意涵：*唯有正向思考，才能握有讓自己更好的鑰匙。*"
+        "text": "唐景崧成立「(*臺灣民主國*)」抵擋日本，最後失敗"
+      },
+      {
+        "indent": 3,
+        "text": "西元 1895 年，日本在臺北設立(*臺灣總督府*)，開始殖民統治"
+      },
+      {
+        "indent": 4,
+        "text": "→引入現代化的管理措施與觀念"
+      },
+      {
+        "indent": 2,
+        "text": "警察制度"
+      },
+      {
+        "indent": 3,
+        "text": "設置派出所及利用(*保甲*)制度"
+      },
+      {
+        "indent": 3,
+        "text": "警察管理秩序、衛生、人口"
+      },
+      {
+        "indent": 2,
+        "text": "武裝抗日行動"
+      },
+      {
+        "indent": 3,
+        "text": "西元 1915 年噍吧哖事件"
+      },
+      {
+        "indent": 4,
+        "text": "→漢人最大武裝抗日，之後改以非武裝方式爭取權益"
+      },
+      {
+        "indent": 3,
+        "text": "西元 1930 年(*霧社*)事件"
+      },
+      {
+        "indent": 4,
+        "text": "→賽德克族被迫遷居"
+      },
+      {
+        "indent": 2,
+        "text": "新式教育"
+      },
+      {
+        "indent": 3,
+        "text": "初等教育"
+      },
+      {
+        "indent": 4,
+        "text": "日籍：小學校"
+      },
+      {
+        "indent": 4,
+        "text": "臺籍：(*公學校*)或蕃童教育所"
+      },
+      {
+        "indent": 3,
+        "text": "中、高等教育"
+      },
+      {
+        "indent": 4,
+        "text": "醫學校、農工商學校、師範學校"
+      },
+      {
+        "indent": 4,
+        "text": "海外留學"
+      },
+      {
+        "indent": 3,
+        "text": "學習國語（日語）、算術、體操等科目"
+      },
+      {
+        "indent": 4,
+        "text": "→女性與原住民族也成為受教育對象"
+      },
+      {
+        "indent": 2,
+        "text": "社會運動"
+      },
+      {
+        "indent": 3,
+        "text": "(*林獻堂*)、蔣渭水"
+      },
+      {
+        "indent": 3,
+        "text": "臺灣議會設置請願運動"
+      },
+      {
+        "indent": 4,
+        "text": "→總督府開放部分地方選舉"
+      },
+      {
+        "indent": 3,
+        "text": "臺灣文化協會"
+      },
+      {
+        "indent": 4,
+        "text": "→提升文化素養與公民意識"
+      },
+      {
+        "indent": 3,
+        "text": "臺灣民報"
+      },
+      {
+        "indent": 4,
+        "text": "→批評時政"
       },
       {
         "indent": 1,
-        "text": "4.依據詩句回答問題。"
+        "text": "日本建設臺灣帶來哪些轉變？"
       },
       {
         "indent": 2,
-        "text": "①摘一片雪白的雲，擦拭抹亮誠懇的心靈。表示作者想以*誠懇*的態度迎向人生。用耀眼的*太陽*，翻轉生命的*幽暗*。"
+        "text": "籌措經費"
+      },
+      {
+        "indent": 3,
+        "text": "實施(*專賣*)制度，統一販售"
+      },
+      {
+        "indent": 4,
+        "text": "→鴉片、樟腦、食鹽、菸與酒"
+      },
+      {
+        "indent": 3,
+        "text": "進行土地與戶口調查"
+      },
+      {
+        "indent": 4,
+        "text": "→政策及徵稅依據"
       },
       {
         "indent": 2,
-        "text": "②哇 噴泉的彩虹成微笑倒影，有*美麗結局*的意涵；快 儲存成動畫，有*立刻行動不要遲延*的督促。而*未來*的自己充滿無限希望與光明。"
+        "text": "發展基礎建設"
+      },
+      {
+        "indent": 3,
+        "text": "(*交通*)設施→運輸資源、強化統治"
+      },
+      {
+        "indent": 4,
+        "text": "→公路、縱貫鐵路、基隆港、高雄港"
+      },
+      {
+        "indent": 3,
+        "text": "水利設施→增加農產量"
+      },
+      {
+        "indent": 4,
+        "text": "→(*嘉南大圳*)"
+      },
+      {
+        "indent": 3,
+        "text": "新式糖廠、發電廠→擴大糖業生產"
       },
       {
         "indent": 1,
-        "text": "5.把詩句分為三部份，你會如何安排？（期勉、觀察、探索）"
+        "text": "日治時期臺灣人的生活與習慣產生什麼變化？"
       },
       {
         "indent": 2,
-        "text": "①第一大段*觀察*自己：看著池中自己的*倒影*，省思人際關係"
+        "text": "衛生觀念"
+      },
+      {
+        "indent": 3,
+        "text": "建造(*自來水*)設施"
+      },
+      {
+        "indent": 4,
+        "text": "→提供乾淨用水，並排放汙水"
+      },
+      {
+        "indent": 3,
+        "text": "設立公共市場"
+      },
+      {
+        "indent": 4,
+        "text": "→採光、通風建築"
+      },
+      {
+        "indent": 3,
+        "text": "廣設西式醫院"
+      },
+      {
+        "indent": 4,
+        "text": "→接種疫苗、治療疾病"
+      },
+      {
+        "indent": 3,
+        "text": "衛生保健及食品營養宣傳"
+      },
+      {
+        "indent": 4,
+        "text": "→結合警察制度及學校教育"
       },
       {
         "indent": 2,
-        "text": "②第二大段*探索*自己：對朋友是否*真誠*？學習態度是否*認真*？要努力成長茁壯。"
+        "text": "時間觀念"
+      },
+      {
+        "indent": 3,
+        "text": "引進西方標準時間"
+      },
+      {
+        "indent": 4,
+        "text": "→民眾逐漸養成(*守時*)習慣"
+      },
+      {
+        "indent": 3,
+        "text": "實施休假日→出現休閒設施"
+      },
+      {
+        "indent": 4,
+        "text": "→公園、電影院、溫泉浴場等"
+      },
+      {
+        "indent": 3,
+        "text": "學校安排戶外活動"
+      },
+      {
+        "indent": 4,
+        "text": "→遠足、登山等"
       },
       {
         "indent": 2,
-        "text": "③第三大段*期勉*自己：要誠懇追尋*彩虹*般的繽紛未來。"
+        "text": "多元文化"
       },
       {
-        "indent": 1,
-        "text": "6.全首詩句中，你對哪一句最有感觸？並說明理由。（參考）"
+        "indent": 3,
+        "text": "日本文化及西洋風氣"
+      },
+      {
+        "indent": 3,
+        "text": "臺灣傳統習俗"
+      },
+      {
+        "indent": 4,
+        "text": "多元文化交會"
+      },
+      {
+        "indent": 5,
+        "text": "→西式技法創作"
+      },
+      {
+        "indent": 5,
+        "text": "→和服、西裝及洋裝"
+      },
+      {
+        "indent": 5,
+        "text": "→日式、西式建築、飲食文化"
       },
       {
         "indent": 2,
-        "text": "詩句：*遇見皺巴巴的自己*"
+        "text": "皇民化運動"
       },
       {
-        "indent": 2,
-        "text": "理由：*感覺很震撼，只有內心遇得見扭曲及不完整的自己，與深層的自己相遇很真實*"
+        "indent": 3,
+        "text": "西元 1937 年，中日戰爭爆發，總督府推動(*皇民化*)運動"
+      },
+      {
+        "indent": 4,
+        "text": "→獎勵民眾說日語、改日本姓氏、參拜神社及穿和服等"
+      },
+      {
+        "indent": 3,
+        "text": "西元 1945 年日本戰敗前，仍未能完全同化臺灣社會"
       }
     ],
-    "quiz": [
+    "prepSheets": [
       {
-        "q": "課文中的主角在哪裡遇見自己？",
-        "options": [
-          "同學眼中",
-          "水池倒影",
-          "葉間縫隙",
-          "平行空間"
-        ],
-        "a": 2
+        "id": "1-1",
+        "title": "1-1",
+        "content": [
+          {
+            "indent": 1,
+            "text": "一、請先看看課本的標題、圖片，猜猜看這一課可能在談什麼？"
+          },
+          {
+            "indent": 1,
+            "text": "是的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴日本如何接收並統治臺灣"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵農業改良如何提升稻米產量"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶鐵路與水利建設如何改變臺灣"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷警察制度如何影響人民生活"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑸臺灣人民如何反抗與爭取權利"
+          },
+          {
+            "indent": 1,
+            "text": "二、基礎理解題，正確的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "text": "⒈西元 1894 年，清帝國與日本爆發什麼戰爭後，臺灣與澎湖被割讓給日本？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴鴉片戰爭"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵甲午戰爭"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶清法戰爭"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷日俄戰爭"
+          },
+          {
+            "indent": 1,
+            "text": "⒉日本統治臺灣後，在臺北設立哪一個機關，作為管理臺灣的重要機構？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴臺灣議會"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵臺灣民主國"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶臺灣總督府"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷臺灣文化協會"
+          },
+          {
+            "indent": 1,
+            "text": "⒊日治時期的警察制度雖有助於社會穩定，但也常被批評有什麼問題？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴完全不管理地方事務"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵使人民不用遵守政令"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶讓地方事務無人負責"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷侵害人民的權利"
+          },
+          {
+            "indent": 1,
+            "text": "⒋在初等教育階段，日治時期的日籍兒童主要在哪一種學校上學？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴小學校"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵公學校"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶蕃童教育所"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷醫學校"
+          },
+          {
+            "indent": 1,
+            "text": "⒌西元 1915 年，因農作歉收、林地收歸國有等原因，引發哪一個事件？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴噍吧哖事件"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵霧社事件"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶苗栗事件"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷牡丹社事件"
+          },
+          {
+            "indent": 1,
+            "text": "三、日治時期爭取人民權利的社會運動。"
+          },
+          {
+            "indent": 1,
+            "isTable": true,
+            "headers": [
+              "名稱",
+              "臺灣議會設置請願運動",
+              "(*臺灣文化協會*)"
+            ],
+            "rows": [
+              [
+                "推動時間",
+                "西元 1920 年代開始",
+                "西元 1921 年成立"
+              ],
+              [
+                "推動方式",
+                "向日本政府提出請願",
+                "設立讀報社、巡迴演講、播放電影等"
+              ],
+              [
+                "主要訴求",
+                "希望設立(*臺灣議會*)，讓臺灣人有參與(*治理*)的機會",
+                "提升臺灣人民的文化素養與公民意識"
+              ],
+              [
+                "影響",
+                "讓臺灣人開始重視政治參與以及自治權利",
+                "幫助臺灣人民接觸新知，關心社會公共事務"
+              ]
+            ]
+          }
+        ]
       },
       {
-        "q": "「我遇到皺巴巴的自己」這句話是什麼意思？",
-        "options": [
-          "我的臉被大風吹皺了",
-          "現在的自己已有皺紋",
-          "魚讓池水生起了波紋",
-          "風使池水中倒影晃動"
-        ],
-        "a": 4
+        "id": "1-2",
+        "title": "1-2",
+        "content": [
+          {
+            "indent": 1,
+            "text": "一、請先看看課本的標題、圖片，猜猜看這一課可能在談什麼？"
+          },
+          {
+            "indent": 1,
+            "text": "是的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴總督府如何籌措建設經費"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵交通建設如何加快貨物流通"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶水利設施如何提高農業產量"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷新式教育如何改變學習內容"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑸社會運動如何爭取人民權利"
+          },
+          {
+            "indent": 1,
+            "text": "二、基礎理解題，正確的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "text": "⒈總督府為了籌措各項基礎建設所需經費，實施什麼制度？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴建築改革制度"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵減稅制度"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶專賣制度"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷警察制度"
+          },
+          {
+            "indent": 1,
+            "text": "⒉下列哪一項不是日治時期專賣制度下的商品？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴鴉片"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵樟腦"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶米"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷食鹽"
+          },
+          {
+            "indent": 1,
+            "text": "⒊嘉南大圳完工後，原本的荒旱地變成了什麼樣的土地，帶來什麼好處？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴變成工業區，增加就業機會"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵變成可種植的土地，增加稻米和甘蔗產量"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶變成森林保護區，增加生物多樣性"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷變成住宅區，提供更多住房"
+          },
+          {
+            "indent": 1,
+            "text": "⒋日治時期，嘉南平原農業生產不穩定的主要原因是什麼？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴農民不願意種植農作物"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵嘉南平原的土壤不肥沃"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶當地降水季節分布不均"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷當地缺乏足夠的勞動力"
+          },
+          {
+            "indent": 1,
+            "text": "⒌日治時期，縱貫鐵路的主要功能是什麼？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴運送阿里山的木材"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵促進漁村的漁業發展"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶連接東部主要城市，加速人力流通"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷連結西部主要城市，加速貨物流通"
+          },
+          {
+            "indent": 1,
+            "text": "三、簡答題。"
+          },
+          {
+            "indent": 1,
+            "text": "⒈當時哪個港口，因為距離日本較近，成為主要對日運輸的港口？"
+          },
+          {
+            "indent": 2,
+            "text": "答：(*基隆港*)"
+          },
+          {
+            "indent": 1,
+            "text": "⒉誰設計烏山頭水庫，並取用曾文溪的溪水，規畫嘉南大圳？"
+          },
+          {
+            "indent": 2,
+            "text": "答：(*八田與一*)"
+          },
+          {
+            "indent": 1,
+            "text": "⒊「嘉南大圳的建立，增加☆與◇的產量。」請問☆及◇分別代表什麼？（答案順序可以交換）"
+          },
+          {
+            "indent": 2,
+            "text": "☆: (*稻米*) ◇: (*甘蔗*)"
+          }
+        ]
       },
       {
-        "q": "為什麼作者要選擇在水池邊遇見自己呢？",
-        "options": [
-          "因為在水池邊比較清涼，心情能夠自動澄靜下來",
-          "因為水池就如照鏡子般，能觀照內心，自我反省",
-          "因為水池邊有許多小動物們，可以陪伴我們玩耍",
-          "因為水池流動，如同智慧在我們心中不斷的游走"
-        ],
-        "a": 2
-      },
-      {
-        "q": "下列何者不符合本課課文中「自己」這個人的特質？",
-        "options": [
-          "既熱情又愛捉弄人",
-          "既貪玩又喜歡學習",
-          "喜歡玩水又愛作夢",
-          "喜歡發問又愛大自然"
-        ],
-        "a": 1
+        "id": "1-3",
+        "title": "1-3",
+        "content": [
+          {
+            "indent": 1,
+            "text": "一、請先看看課本的標題、圖片，猜猜看這一課可能在談什麼？"
+          },
+          {
+            "indent": 1,
+            "text": "是的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴衛生觀念如何改善生活品質"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵時間觀念如何影響日常作息"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶休閒活動如何改變生活樣貌"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷交通建設如何加快貨物流通"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑸多元文化如何影響服飾、飲食與建築"
+          },
+          {
+            "indent": 1,
+            "text": "二、基礎理解題，正確的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "text": "⒈日治時期生活用水設施的改變，從傳統鑿井取水逐漸轉向什麼？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴雨水收集"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵直接飲用河水"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶完全不用水"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷自來水廠及水源地"
+          },
+          {
+            "indent": 1,
+            "text": "⒉日治時期傳入臺灣的文化，包含日本文化與當時在日本流行的什麼風氣？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴傳統仕紳"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵商業風氣"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶傳統習俗"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷西洋風氣"
+          },
+          {
+            "indent": 1,
+            "text": "⒊皇民化運動中，總督府鼓勵臺灣人採取哪一種行為？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴學漢文、恢復傳統教育"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵說臺語、推廣地方文化"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶說日語、改日本的姓氏"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷說英語、模仿西洋生活"
+          },
+          {
+            "indent": 1,
+            "text": "⒋經過多年推行衛生措施後，臺灣社會出現哪種變化？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴市場全部移到戶外"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵傳染病疫情獲得控制"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶學校不再重視健康檢查"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷人民平均壽命逐漸縮短"
+          },
+          {
+            "indent": 1,
+            "text": "⒌觀察課本第 26 頁的圖，總督府發行「時間就是金錢」海報，主要是宣導哪一種觀念？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴守時觀念"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵儲蓄觀念"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶衛生觀念"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷休閒觀念"
+          },
+          {
+            "indent": 1,
+            "text": "三、日治時期臺灣人生活與習慣的轉變。"
+          },
+          {
+            "indent": 1,
+            "isTable": true,
+            "headers": [
+              "名稱",
+              "主要原因",
+              "具體做法/現象",
+              "對臺灣社會的影響"
+            ],
+            "rows": [
+              [
+                "衛生觀念",
+                "總督府引入現代衛生觀念",
+                "建設自來水設施、設立公共市場、西式醫院、疫苗接種、學校健康檢查",
+                "傳染病逐漸獲得控制，人民平均壽命(*提升*)"
+              ],
+              [
+                "(*時間*)觀念",
+                "總督府引進西方標準時間制度",
+                "規定一天 24 小時、一週 7 天、(*星期日*)為休假日",
+                "民眾逐漸養成(*守時*)習慣，生活作息更有規律"
+              ],
+              [
+                "(*休閒*)觀念",
+                "實施休假日制度，生活作息開始固定",
+                "公園、電影院、溫泉浴場等休閒設施出現；學校安排遠足、登山等活動",
+                "民眾休閒方式增加，學生也能透過戶外活動認識臺灣環境與地方產業"
+              ]
+            ]
+          }
+        ]
       }
-    ],
-    "practices": [
-      {
-        "ex": "( 覓食 )的( 小魚 )呀！請問你",
-        "pr": "( 自由 )的( 小鳥 )呀！請問你"
-      },
-      {
-        "ex": "( 摘 )一( 片 ) ( 雪白 )的( 雲 )",
-        "pr": "( 進 )一( 條 )( 熱鬧 )的( 街 )"
-      }
-    ],
-    "sentences": [
-      {
-        "word": "搖頭晃腦",
-        "ex": "弟弟跟隨著音樂起伏，(搖頭晃腦)、(擺動身體)，十分陶醉。"
-      }
-    ],
-    "task4": {
-      "theme": "創意自我介紹",
-      "analyst": "作者王洛夫透過一再的「設問」手法，讓讀者跟自己的心靈對話，呈現內在對自我概念的矛盾，並期待未來能「蛻變」為更好的自己。<br>寫作時，同學們首先要省思自己有怎樣的人格特質，以及有哪些優點和缺點。<br>採用「以人擬物」的手法與詼諧幽默的筆調，將「我」化為「商品」來介紹自己，透過獨特的視角跳脫平常人的眼光來洞察自己。",
-      "magic": "一、省思自己的特質和優、缺點，形塑正向積極的「自我概念」：透過自我詰問，在意同儕眼光中發現內在的人格特質，並找出外顯的優、缺點。學生可以利用詞彙庫（如活潑、文靜、粗心大意等）來尋找適合描述自己的形容詞。<br>二、運用「以人擬物」的轉化手法，嘗試從「物」的寫作視角介紹自己：將自己比擬成「商品」寫作「使用說明書」，即是運用轉化修辭。寫作時可將「自我概念」的要素（外貌、性格特質、優缺點）對照商品的說明書要素（外觀構造、功能用法、保養方式）進行創意發想。",
-      "qa": {
-        "q": "在寫作〈我的使用說明書〉時，被比擬為「商品」的自己，以及身邊的父母、師長、同儕，在「敘事視角」上應該分別使用第幾人稱？",
-        "a": "被比擬成物的自己要使用第一人稱「我」，父母、師長、同儕則是第二人稱的「你」。"
-      },
-      "mc": {
-        "q": "將「自己」比擬成「商品」來寫作，轉變原來的性質，化成另一種截然不同的事物，這是運用了下列哪一種修辭手法？",
-        "options": [
-          "(A) 譬喻修辭",
-          "(B) 轉化修辭",
-          "(C) 誇飾修辭",
-          "(D) 排比修辭"
-        ],
-        "a": "(B)"
-      }
-    }
+    ]
   },
   {
     "id": "lesson-2",
-    "lessonNum": "第二課",
-    "lessonName": "為什麼大家不理我？",
-    "author": "林良",
-    "task1": [
+    "lessonNum": "第二單元",
+    "lessonName": "邁向民主的社會",
+    "summary": [
       {
         "indent": 1,
-        "text": "一.課文段落結構"
+        "text": "臺灣的民主之路"
       },
       {
         "indent": 2,
-        "text": "（一）女兒的難題"
+        "text": "兩岸政權演變 (西元年分)"
       },
       {
         "indent": 3,
-        "text": "*女兒在學校被同學冷落。*"
-      },
-      {
-        "indent": 2,
-        "text": "（二）經驗分享"
+        "text": "1895年：臺灣 (清帝國 -> 日本帝國)"
       },
       {
         "indent": 3,
-        "text": "1.（2-4 段）*作者回憶自己同樣的經驗。發現好友不理自己，感到害怕。*"
+        "text": "1912年：中國 (清帝國 -> 中華民國)"
       },
       {
         "indent": 3,
-        "text": "2.（5-9 段）*難以忍受好友不理自己，感到憤慨。*"
+        "text": "1945年：臺灣 (日本帝國 -> 中華民國)"
       },
       {
         "indent": 3,
-        "text": "3.（10-11 段）*最後得知，好友冷落自己的原因，並及時反省自己。*"
+        "text": "1949年：中國 (中華民國 -> 中華人民共和國)"
       },
       {
         "indent": 2,
-        "text": "（三）建議與期許"
+        "text": "戰後臺灣民主發展 (民國年分)"
       },
       {
         "indent": 3,
-        "text": "（12-13 段）*期勉女兒，要成為堅強且不怕寂寞的人。*"
+        "text": "36年 (*228*)事件"
+      },
+      {
+        "indent": 4,
+        "text": "→查緝私菸演變成全臺衝突"
+      },
+      {
+        "indent": 4,
+        "text": "→政府派軍隊鎮壓，造成民眾傷亡"
+      },
+      {
+        "indent": 3,
+        "text": "38年 (*戒嚴*)→控制社會"
+      },
+      {
+        "indent": 4,
+        "text": "→限制人民基本權利"
+      },
+      {
+        "indent": 3,
+        "text": "68年 (*美麗島*)事件→爭取解除戒嚴"
+      },
+      {
+        "indent": 4,
+        "text": "→228 事件後最大衝突"
+      },
+      {
+        "indent": 3,
+        "text": "76年 解嚴"
+      },
+      {
+        "indent": 3,
+        "text": "79年 (*野百合*)學運→要求落實憲法"
+      },
+      {
+        "indent": 4,
+        "text": "→促成總統直接民選"
+      },
+      {
+        "indent": 3,
+        "text": "85年 首次(*總統*)直接民選"
+      },
+      {
+        "indent": 3,
+        "text": "89年 首次政黨輪替"
+      },
+      {
+        "indent": 4,
+        "text": "→以選舉和平完成政權轉移"
+      },
+      {
+        "indent": 3,
+        "text": "93年 公民投票"
+      },
+      {
+        "indent": 4,
+        "text": "→人民對重大公共議題表達意見"
       },
       {
         "indent": 1,
-        "text": "二.閱讀理解提問"
-      },
-      {
-        "indent": 1,
-        "text": "1.根據課文內容，作者寫這封信的主因為何？"
+        "text": "民主國家的運作"
       },
       {
         "indent": 2,
-        "text": "*因為女兒在學校被同學冷落所以寫信開導並建議*"
+        "text": "中華民國憲法"
       },
       {
-        "indent": 1,
-        "text": "2.作者和童年好友的好交情，哪些敘述可以窺見？"
+        "indent": 3,
+        "text": "民國 36 年施行，為國家根本大法"
       },
       {
-        "indent": 2,
-        "text": "①被稱呼：*雙胞胎*。"
+        "indent": 4,
+        "text": "→保障人權、增進福利、建立民主國家"
       },
       {
-        "indent": 2,
-        "text": "②上學動機：*每天熱切期待上學，為能跟好友相處*。"
+        "indent": 3,
+        "text": "民國 76 年解嚴後，數次增修"
       },
       {
-        "indent": 2,
-        "text": "③分享：*新買的郵票，第一個想讓好友欣賞*。"
+        "indent": 4,
+        "text": "→發展為今日民主社會樣貌"
       },
       {
-        "indent": 1,
-        "text": "3.作者如何形容被冷落的感受及表現？"
+        "indent": 3,
+        "text": "規定(*權利*)義務、明定政府組成"
       },
       {
-        "indent": 2,
-        "text": "①*心裡一涼像忽然要暈倒的樣子*"
-      },
-      {
-        "indent": 2,
-        "text": "②*感覺有孤零零感覺爬上心頭*"
+        "indent": 4,
+        "text": "→掌握施政方向，並依法行政"
       },
       {
         "indent": 2,
-        "text": "③*很害怕像在幼兒園，沒準備好就溜下滑梯，不知會掉落何方*。"
+        "text": "中央與地方政府"
       },
       {
-        "indent": 1,
-        "text": "4.好友冷落作者的原因是什麼？作者聽到原因時的反應為何？"
+        "indent": 3,
+        "text": "中央"
       },
       {
-        "indent": 2,
-        "text": "原因：*母親住院開刀*，反應：*①哭了②笑了③流鼻涕④覺得自私*"
+        "indent": 4,
+        "text": "總統(國家元首)"
       },
       {
-        "indent": 1,
-        "text": "5.作者和好友從失和到和好，情緒轉折變化為何？"
+        "indent": 4,
+        "text": "行政、立法、司法、考試、監察五院"
       },
       {
-        "indent": 2,
-        "text": "【選項】：害怕、神氣、憤慨、自私、孤單可憐",
-        "isBox": true
+        "indent": 5,
+        "text": "行政院 →例：訂定營養午餐政策"
       },
       {
-        "indent": 2,
-        "text": "*神氣*⇨*害怕*⇨*憤慨*⇨*孤單可憐*⇨*自私*"
+        "indent": 5,
+        "text": "立法院 →例：制定學校衛生法"
       },
       {
-        "indent": 1,
-        "text": "6.作者以三個面向勉勵女兒，請從內容找出確切文句。"
+        "indent": 3,
+        "text": "地方"
       },
       {
-        "indent": 2,
-        "text": "①同理心：*一個人不能老是等著享受別人的歡迎，應該想想別人不是專為自己活著的*。"
+        "indent": 4,
+        "text": "行政機關 →例：視察食材品質"
       },
       {
-        "indent": 2,
-        "text": "②鼓勵：*在被別人冷落時，還有其他人深深愛著你*"
-      },
-      {
-        "indent": 2,
-        "text": "③建議：*把心放寬，不要計較，學習慰問別人*"
-      },
-      {
-        "indent": 1,
-        "text": "7.當女兒遇到困難，作者採取開導方法依序如何？"
+        "indent": 4,
+        "text": "立法機關 →例：審核營養午餐預算"
       },
       {
         "indent": 2,
-        "text": "【選項】：提供建議、說明道理、以自身經驗為例、給予鼓勵",
-        "isBox": true
+        "text": "人民的權利和義務"
       },
       {
-        "indent": 2,
-        "text": "*以自身經驗為例*⇨*說明道理*⇨*給予鼓勵*⇨*提供建議*"
+        "indent": 3,
+        "text": "權利"
       },
       {
-        "indent": 1,
-        "text": "8.你對於作者哪句勉勵的話語最有感觸？並說明理由。"
+        "indent": 4,
+        "text": "平等權、自由權、(*受益*)權、參政權"
       },
       {
-        "indent": 2,
-        "text": "感觸：*堅強的人不怕寂寞*"
+        "indent": 3,
+        "text": "(*義務*)"
       },
       {
-        "indent": 2,
-        "text": "理由：*正向力量強大的人，會用一絲陽光照亮其他幽暗之處，找到鼓舞自己的力量。*"
+        "indent": 4,
+        "text": "納稅、服兵役"
+      },
+      {
+        "indent": 3,
+        "text": "權利與義務"
+      },
+      {
+        "indent": 4,
+        "text": "(*受國民教育*)"
       }
     ],
-    "quiz": [
+    "prepSheets": [
       {
-        "q": "這一課是誰寫信給櫻櫻？",
-        "options": [
-          "老師",
-          "同學",
-          "爸爸",
-          "許達三"
-        ],
-        "a": 3
+        "id": "2-1",
+        "title": "2-1",
+        "content": [
+          {
+            "indent": 1,
+            "text": "一、請先看看課本的標題、圖片，猜猜看這一課可能在談什麼？"
+          },
+          {
+            "indent": 1,
+            "text": "是的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴人民如何爭取自由權利"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵社會事件如何推動改變"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶選舉投票流程如何進行"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷臺灣如何逐步走向民主"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑸政府部門如何分工合作"
+          },
+          {
+            "indent": 1,
+            "text": "二、基礎理解題，正確的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "text": "⒈民國 34 年（西元 1945 年），臺灣發生哪一項政權轉變？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴清帝國統治臺灣"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵日本接管臺灣與澎湖"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶中華民國接管臺灣與澎湖"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷臺灣舉行首次總統直選"
+          },
+          {
+            "indent": 1,
+            "text": "⒉西元 1912 年，孫中山等人在中國推翻清帝國後，創建了哪一個政權？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴日本帝國"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵中華民國"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶臺灣總督府"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷中華人民共和國"
+          },
+          {
+            "indent": 1,
+            "text": "⒊戰後初期，臺灣人民與來自中國大陸的官員、民眾之間，因哪一方面差異而容易產生誤解？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴飲食與服裝"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵交通與建築"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶農業與工業"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷語言與文化"
+          },
+          {
+            "indent": 1,
+            "text": "⒋二二八事件爆發的直接導火線，與哪一件事情有關？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴查緝私菸處理失當"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵舉辦第一次總統直選"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶宣布臺灣解除戒嚴"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷推動全臺公民投票"
+          },
+          {
+            "indent": 1,
+            "text": "⒌戒嚴時期，不少歌曲和書籍遭到什麼樣的處理？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴改編成教材"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵翻譯成外文"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶查禁或審查"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷販售到國外"
+          },
+          {
+            "indent": 1,
+            "text": "三、臺灣民主的發展歷程。"
+          },
+          {
+            "indent": 1,
+            "isTable": true,
+            "headers": [
+              "時間",
+              "主要原因",
+              "主要訴求或變化",
+              "歷史意義"
+            ],
+            "rows": [
+              [
+                "民國(*38*)年",
+                "戒嚴開始",
+                "政府嚴格控制社會，人民自由受到限制",
+                "臺灣長期處於威權統治之下"
+              ],
+              [
+                "民國 68 年",
+                "(*美麗島*)事件",
+                "爭取開放黨禁、報禁、解除戒嚴、恢復人權",
+                "提升社會對民主與自由的重視"
+              ],
+              [
+                "民國 76 年",
+                "解嚴",
+                "取消對人民基本權利的許多限制",
+                "開啟臺灣民主化進程"
+              ],
+              [
+                "民國 79 年",
+                "(*野百合*)學運",
+                "要求政治改革、落實憲法制度",
+                "推動後續民主改革"
+              ],
+              [
+                "民國(*85*)年",
+                "首次總統直選",
+                "人民可直接選出總統",
+                "民主制度的重要里程碑"
+              ],
+              [
+                "民國(*89*)年",
+                "首次政黨輪替",
+                "政權可經由選舉和平轉移",
+                "顯示民主政治逐漸成熟"
+              ],
+              [
+                "民國 93 年",
+                "首次全國性\n(*公民投票*)",
+                "人民可對重大公共議題表達意見",
+                "增加人民參與公共事務的方式"
+              ]
+            ]
+          }
+        ]
       },
       {
-        "q": "櫻櫻所遇到的是什麼難題？",
-        "options": [
-          "家庭關係",
-          "同儕關係",
-          "課業成績",
-          "手足相處"
-        ],
-        "a": 2
-      },
-      {
-        "q": "下列哪個句子所表達的情緒，和其他句不相同？",
-        "options": [
-          "我心裡一涼，就像忽然要暈倒的樣子。",
-          "像在幼稚園沒準備好就溜下了滑梯，不知道會掉落在什麼地方。",
-          "像小時候跟母親去電影院，壯著膽子自己上廁所，回來的時候，在黑暗的大廳裡，竟找不到母親是坐在哪一個角落。",
-          "聽了許達三的話之後，我哭了，也笑了，還流了鼻涕。"
-        ],
-        "a": 4
-      },
-      {
-        "q": "下列哪一項不是林良在信中想要告訴女兒的？",
-        "options": [
-          "己所不欲，勿施於人",
-          "心胸開闊，不要計較",
-          "不要害怕寂寞，當一個堅強的人",
-          "遇到困境不要害怕，靜心思考原因"
-        ],
-        "a": 3
+        "id": "2-2",
+        "title": "2-2",
+        "content": [
+          {
+            "indent": 1,
+            "text": "一、請先看看課本的標題、圖片，猜猜看這一課可能在談什麼？"
+          },
+          {
+            "indent": 1,
+            "text": "是的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴憲法如何保障人民權利"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵總統如何代表國家出訪"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶國際組織如何協助臺灣"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷政黨如何提出競選政見"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑸中央和地方政府如何分工"
+          },
+          {
+            "indent": 1,
+            "text": "二、基礎理解題，正確的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "text": "⒈課文提到，臺灣在什麼時期並未落實憲法精神？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴解嚴以後"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵戒嚴期間"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶政黨輪替後"
+          },
+          {
+            "indent": 1,
+            "text": "⒉我國中央政府依權力和職責分成幾院？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴三院"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵四院"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶五院"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷六院"
+          },
+          {
+            "indent": 1,
+            "text": "⒊立法院的主要工作是什麼？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴執行政策、推動建設"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵巡查市場、管理食材"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶辦理地方救助活動"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷制定法律、審查預算"
+          },
+          {
+            "indent": 1,
+            "text": "⒋為什麼各縣市的地方制度不一定完全相同？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴因為各地都沒有地方政府"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵因為各地經濟財政條件不同"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶因為中央政府完全不管理地方"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷因為人民不能參與公共事務"
+          },
+          {
+            "indent": 1,
+            "text": "⒌下列哪一項最符合「平等權」的意思？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴可以投票選舉公職人員"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵可以接受教育與基本保障"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶可以表達意見與選擇信仰"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷不因性別、種族等受到差別待遇"
+          },
+          {
+            "indent": 1,
+            "text": "三、臺灣的中央政府與地方政府。"
+          },
+          {
+            "indent": 1,
+            "isTable": true,
+            "headers": [
+              "項目",
+              "(*中央*)政府",
+              "地方政府"
+            ],
+            "rows": [
+              [
+                "負責範圍",
+                "全國性的公共事務",
+                "(*地方*)性的公共事務"
+              ],
+              [
+                "主要工作",
+                "制定全國政策、維持國家運作、管理全國性事務等",
+                "推動地方建設、維護地方治安與衛生、辦理地方教育文化與社會福利等"
+              ],
+              [
+                "組成方式",
+                "依憲法與法律設立，由總統、五院等機關分工合作",
+                "由地方行政機關與地方立法機關組成"
+              ],
+              [
+                "組成機關",
+                "行政機關如(*行政院*)；\n立法機關如(*立法院*)",
+                "行政機關如直轄市政府、縣市政府、鄉鎮市區公所；\n立法機關如縣市議會、鄉鎮市民代表會、山地原住民區民代表會"
+              ]
+            ]
+          }
+        ]
       }
-    ],
-    "practices": [
-      {
-        "ex": "( 頭皮 )( 發麻 )",
-        "pr": "( 鼻頭 )( 發酸 ) / ( 心裡 )( 發涼 )"
-      },
-      {
-        "ex": "( 表情 )( 嚴肅 )",
-        "pr": "( 溫柔 )的( 心 )"
-      },
-      {
-        "ex": "( 班上 )的( 我們 )，就( 像 )( 一家人 )一樣。",
-        "pr": "(本題無提供練習句)"
-      }
-    ],
-    "sentences": [
-      {
-        "word": "雖然……卻……",
-        "ex": "雖然(已經上高年級)，我(上學時)，卻有種(孤零零)的感覺。"
-      },
-      {
-        "word": "只要……就……",
-        "ex": "只要( 班上 )一( 表決 )，就( 一定 )( 通過 )。"
-      },
-      {
-        "word": "不管……也……",
-        "ex": "不管( 天氣 )多麼( 惡劣 )，( 我們 )也( 一樣 )( 上學 )。"
-      }
-    ],
-    "task4": {
-      "theme": "透過書信說明與溝通",
-      "analyst": "現代由於網路普及和應用軟體推陳出新，在校園、職場等領域中，電子郵件（E-mail）是主要的溝通方式之一。<br>本課引導同學們選擇生活中某件與同儕相處不愉快的事，學習寫一封「電子郵件」向對方說明與溝通。",
-      "magic": "一、能掌握電子郵件的撰寫要領和信件禮儀：撰寫電子郵件包含幾個重要欄位。寄件者建議改成中文名稱；主旨必須簡明扼要、不可空白或含混不清；內文建議採用「倒金字塔」結構並善用條列式；最後要加上結尾敬語與署名。<br>二、能透過撰寫郵件的方式來說明自己對某件事物的想法，進行溝通：電子郵件不適宜娓娓道來的記敘筆法，建議採用「是什麼、為什麼、如何做」的思路。主旨要說明目的，首段可讚美好朋友，接著詳細舉例說明前因後果及內心感受，最後提出解決方法並期待對方回覆。",
-      "qa": {
-        "q": "撰寫電子郵件的「內文」時，專家建議可以採用什麼樣的結構？用意為何？",
-        "a": "不妨採用「倒金字塔」結構，用意是讓閱讀者讀到開頭就對寫信的目的一目了然，再逐段分析解說。"
-      },
-      "mc": {
-        "q": "關於撰寫電子郵件的「主旨」，下列哪一項作法是正確的？",
-        "options": [
-          "(A) 如果覺得主旨不重要，可以讓欄位留白。",
-          "(B) 為了吸引注意力，盡量使用誇張輕浮的用語（如：重要訊息，照過來）。",
-          "(C) 必須用一兩句話來概括寫信的目的和主要內容，簡明扼要。",
-          "(D) 盡量把事情的所有細節都塞進主旨裡，越長越好。"
-        ],
-        "a": "(C)"
-      }
-    }
+    ]
   },
   {
     "id": "lesson-3",
-    "lessonNum": "第三課",
-    "lessonName": "孔子說的話",
-    "author": "孔子的學生們《論語》",
-    "task1": [
+    "lessonNum": "第三單元",
+    "lessonName": "戰後臺灣的經濟與城鄉發展",
+    "summary": [
       {
         "indent": 1,
-        "text": "一. 閱讀理解提問"
+        "text": "戰後臺灣的經濟發展"
+      },
+      {
+        "indent": 2,
+        "text": "戰後經濟發展進程 (民國年分)"
+      },
+      {
+        "indent": 3,
+        "text": "38年 (*三七五*)減租"
+      },
+      {
+        "indent": 3,
+        "text": "39年 韓戰爆發"
+      },
+      {
+        "indent": 3,
+        "text": "40年 公地放領"
+      },
+      {
+        "indent": 3,
+        "text": "42年 耕者有其田"
+      },
+      {
+        "indent": 3,
+        "text": "50年代 設立(*加工出口區*)"
+      },
+      {
+        "indent": 3,
+        "text": "60年代 十大建設"
+      },
+      {
+        "indent": 3,
+        "text": "69年 設立新竹科學園區"
+      },
+      {
+        "indent": 3,
+        "text": "現今 晶圓代工國"
+      },
+      {
+        "indent": 2,
+        "text": "土地改革"
+      },
+      {
+        "indent": 3,
+        "text": "(*三七五*)減租"
+      },
+      {
+        "indent": 4,
+        "text": "→降低農民田租"
+      },
+      {
+        "indent": 3,
+        "text": "公地放領"
+      },
+      {
+        "indent": 4,
+        "text": "→國有耕地供農民購買"
+      },
+      {
+        "indent": 3,
+        "text": "耕者有其田"
+      },
+      {
+        "indent": 4,
+        "text": "→徵收地主土地，轉賣農民"
+      },
+      {
+        "indent": 2,
+        "text": "自給自足到外銷"
+      },
+      {
+        "indent": 3,
+        "text": "韓戰爆發→(*美援*)"
+      },
+      {
+        "indent": 4,
+        "text": "→奠定臺灣經濟發展基礎"
+      },
+      {
+        "indent": 3,
+        "text": "政府設立加工出口區→吸引外商"
+      },
+      {
+        "indent": 4,
+        "text": "→女性工作機會增加"
+      },
+      {
+        "indent": 2,
+        "text": "能源危機"
+      },
+      {
+        "indent": 3,
+        "text": "政府推動(*十大建設*)"
+      },
+      {
+        "indent": 4,
+        "text": "→改善交通、發展重工業、穩定電力"
+      },
+      {
+        "indent": 3,
+        "text": "成立工業技術研究院"
+      },
+      {
+        "indent": 4,
+        "text": "→引進國外技術、培育專業人才"
+      },
+      {
+        "indent": 3,
+        "text": "設立新竹科學園區"
+      },
+      {
+        "indent": 4,
+        "text": "→帶動產業升級"
+      },
+      {
+        "indent": 2,
+        "text": "科技之島"
+      },
+      {
+        "indent": 3,
+        "text": "臺灣高科技產業"
+      },
+      {
+        "indent": 4,
+        "text": "→能製造多功能且體積小的晶片"
+      },
+      {
+        "indent": 3,
+        "text": "許多電子產品都需要晶片"
+      },
+      {
+        "indent": 4,
+        "text": "→全球晶片需求日漸增長"
+      },
+      {
+        "indent": 3,
+        "text": "臺灣作為主要(*晶圓代工*)國"
+      },
+      {
+        "indent": 4,
+        "text": "→成為重要科技之島"
       },
       {
         "indent": 1,
-        "text": "1.此課語錄體包含哪些部分？"
+        "text": "臺灣的城鄉發展"
       },
       {
         "indent": 2,
-        "text": "*①前言②論語內容③注釋④語釋⑤賞析*"
+        "text": "都市、產業與城鄉發展"
       },
       {
-        "indent": 1,
-        "text": "2.從第一段內容找出，孔子膾炙人口教育特色的解釋？"
+        "indent": 3,
+        "text": "經濟發展→吸引人口和產業往(*都市*)集中"
       },
       {
-        "indent": 2,
-        "text": "①有教無類：*不論地位高低，只要人們有心都願意教導*。"
+        "indent": 4,
+        "text": "→六都：臺北市、新北市、桃園市、臺中市、臺南市、高雄市"
       },
       {
-        "indent": 2,
-        "text": "②因材施教：*依學生特質，採用不同的教學方法，透過精鍊而富有哲理的話語，啟發學生思考*。"
+        "indent": 3,
+        "text": "產業進駐→提供(*就業機會*)，吸引人口移入"
       },
       {
-        "indent": 1,
-        "text": "3.請回答兩首論語中，｢師｣的用法有何不同？"
+        "indent": 4,
+        "text": "→生活需求提高，商店及公共設施增加"
       },
       {
-        "indent": 2,
-        "text": "①｢----，可以為師矣｣：詞性*名詞*，解釋*有一技之長可教導別人的人*。"
-      },
-      {
-        "indent": 2,
-        "text": "②｢----，必有我師焉｣：詞性*動詞*，解釋*可以仿效的人*。"
-      },
-      {
-        "indent": 1,
-        "text": "4.孔子認為學識能不斷累積和提升，要具備哪兩個方法？"
+        "indent": 4,
+        "text": "例：中科成立後，帶動周邊道路、學校及公園等公共設施擴增"
       },
       {
         "indent": 2,
-        "text": "①溫故：*溫習舊的學問*。"
+        "text": "交通與生活圈"
+      },
+      {
+        "indent": 3,
+        "text": "(*生活圈*)→每天的活動範圍"
+      },
+      {
+        "indent": 4,
+        "text": "→從家裡到學校、補習班或商店等活動範圍"
+      },
+      {
+        "indent": 3,
+        "text": "過去：交通不便→人們生活圈較小"
+      },
+      {
+        "indent": 3,
+        "text": "現在：交通便利→生活圈逐漸擴大"
+      },
+      {
+        "indent": 4,
+        "text": "→公路、高鐵、臺鐵、捷運等"
       },
       {
         "indent": 2,
-        "text": "②知新：*領悟新的道理或產生不同體悟*。"
+        "text": "經濟發展的環境議題"
       },
       {
-        "indent": 1,
-        "text": "5.四周處處皆為學習對象，孔子如何闡述？"
+        "indent": 3,
+        "text": "經濟發展→容易造成汙染"
       },
       {
-        "indent": 2,
-        "text": "只要自己*有心*，到處是*學習對象*。重點在於擇，只要懂得分辨*善與不善*，必能找出值得學習或警惕之處。"
-      },
-      {
-        "indent": 1,
-        "text": "6.｢三｣有實數和虛數用法，如｢三｣顧茅廬，真的拜訪三次；如餘音繞樑，｢三｣日不絕，代表多日，請回答問題。"
+        "indent": 3,
+        "text": "政府訂定相關法律→評估開發行為對環境的影響"
       },
       {
         "indent": 2,
-        "text": "｢三｣屬於實數用法填 1， 虛數用法填 2"
+        "text": "城鄉發展的困境"
       },
       {
-        "indent": 2,
-        "text": "（ *2* ）三人行，必有我師焉 （ *2* ）火冒三丈 （ *1* ）孟母三遷"
+        "indent": 3,
+        "text": "都市：人口過度集中"
       },
       {
-        "indent": 2,
-        "text": "（ *1* ）吾日三省吾身 （ *1* ）三更半夜 （ *2* ）三緘其口"
+        "indent": 4,
+        "text": "→交通壅塞、房價高漲，也造成噪音汙染、垃圾過量等問題"
       },
       {
-        "indent": 2,
-        "text": "（ *1* ）冰凍三尺，非一日之寒 （ *1* ）三生有幸 （ *2* ）垂涎三尺"
+        "indent": 3,
+        "text": "鄉村：工作機會有限"
       },
       {
-        "indent": 2,
-        "text": "（ *2* ）士別三日，刮目相看 （ *1* ）舉一反三 （ *2* ）新官上任三把火"
-      },
-      {
-        "indent": 1,
-        "text": "7.關於｢-------擇其善者而從之，其不善者而改之。｣請回答問題。"
-      },
-      {
-        "indent": 2,
-        "text": "語意相似的語句，請打✓"
-      },
-      {
-        "indent": 2,
-        "text": "（*✓*）以別人為借鏡 （*✓*）見賢思齊，見不賢內自省"
-      },
-      {
-        "indent": 2,
-        "text": "（*　*）滄海之一粟 （*✓*）以人為鏡，可以明得失"
-      },
-      {
-        "indent": 2,
-        "text": "（*✓*）有者改之，無則嘉勉 （*✓*）善可為法，惡可為戒"
-      },
-      {
-        "indent": 2,
-        "text": "PS 唐太宗在宰相魏徵過世後感慨：以銅為鏡，可以正衣冠；以古為鏡，可以知興替；以人為鏡，可以明得失。"
-      },
-      {
-        "indent": 1,
-        "text": "8.杏壇（*教育界*）、神壇、花壇、文壇、體壇、影壇、杏林（*醫學界*）"
+        "indent": 4,
+        "text": "→青壯年難以留在當地、公共設施缺乏、醫療資源不足等"
       }
     ],
-    "quiz": [
+    "prepSheets": [
       {
-        "q": "孔子教授學生、講授課程的地方是哪裡？",
-        "options": [
-          "瓦舍",
-          "杏壇",
-          "花壇",
-          "梨園"
-        ],
-        "a": 2
+        "id": "3-1",
+        "title": "3-1",
+        "content": [
+          {
+            "indent": 1,
+            "text": "一、請先看看課本的標題、圖片，猜猜看這一課可能在談什麼？"
+          },
+          {
+            "indent": 1,
+            "text": "是的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴土地改革如何影響農民與地主"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵政府如何用專賣制度增加收入"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶加工出口區如何拓展外銷市場"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷十大建設與高科技產業的發展"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑸家庭收入提高後消費方式的改變"
+          },
+          {
+            "indent": 1,
+            "text": "二、基礎理解題，正確的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "text": "⒈政府推動土地改革的主要目的之一是什麼？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴停止農業生產"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵穩定社會秩序"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶增加地主收租比例"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷減少農民耕作意願"
+          },
+          {
+            "indent": 1,
+            "text": "⒉民國 39 年爆發韓戰後，美國援助臺灣的主要目的之一是什麼？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴穩定東亞局勢"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵扶植臺灣民生工業"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶擴大臺灣農產品出口"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷協助臺灣恢復對外貿易"
+          },
+          {
+            "indent": 1,
+            "text": "⒊政府推動「十大建設」的主要目的之一是什麼？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴改以農業取代工業"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵停止水利與電力建設"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶增加對進口產品的依賴"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷改善交通運輸與發展重工業"
+          },
+          {
+            "indent": 1,
+            "text": "⒋政府選擇在新竹設立科學園區，主要與下列哪項條件有關？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴鄰近主要港口方便產品外銷"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵鄰近工研院與理工人才培育學校"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶原有加工出口區集中工廠數量多"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷農業用地廣大適合推動農業升級"
+          },
+          {
+            "indent": 1,
+            "text": "⒌土地改革後，部分地主獲得補償金或股票，可能帶來什麼影響？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴禁止民間資金流動"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵改由政府統一經營農地"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶將資金轉投入工業發展"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷把資金集中投入糧食生產"
+          },
+          {
+            "indent": 1,
+            "text": "三、十大建設。"
+          },
+          {
+            "indent": 1,
+            "isTable": true,
+            "headers": [
+              "建設方向",
+              "課本例子",
+              "對臺灣的影響"
+            ],
+            "rows": [
+              [
+                "改善對內交通運輸",
+                "中山高速公路、鐵路電氣化、北迴鐵路",
+                "縮短(*南北*)交通時間，促進人員與貨物流通"
+              ],
+              [
+                "發展(*重*)工業",
+                "大煉鋼廠、石油化學工業",
+                "減少對進口產品的依賴"
+              ],
+              [
+                "建設電力設施",
+                "(*核能發電廠*)",
+                "穩定電力供應"
+              ],
+              [
+                "建設港口與機場",
+                "臺中港、蘇澳港、\n(*中正*)國際機場",
+                "提升國內外運輸與貿易能力"
+              ]
+            ]
+          }
+        ]
       },
       {
-        "q": "下列對於論語的內容敘述，何者不是本課所提到的？",
-        "options": [
-          "論語內容是孔子和弟子等人的對話紀錄",
-          "閱讀論語可以幫助我們了解孔子的思想",
-          "閱讀論語可以作為我們待人處事的借鏡",
-          "論語的書寫淺顯易懂，使人人皆可閱讀"
-        ],
-        "a": 4
-      },
-      {
-        "q": "關於學習這件事情，下列何者不是課文中孔子的觀點？",
-        "options": [
-          "人生中若能遇到好老師，一定要先拜師求藝",
-          "只要能夠溫故知新，就能夠成為自己的老師",
-          "在生活中到處都有值得我們學習、效仿的對象",
-          "與人相處中學習別人的長處，借鏡別人的短處"
-        ],
-        "a": 1
-      },
-      {
-        "q": "「三人行必有我師焉」，「三人行」是指什麼意思？",
-        "options": [
-          "一本童書的名字",
-          "路上的三個行人",
-          "三個人一起去散步",
-          "泛指生活中遇到的人"
-        ],
-        "a": 4
+        "id": "3-2",
+        "title": "3-2",
+        "content": [
+          {
+            "indent": 1,
+            "text": "一、請先看看課本的標題、圖片，猜猜看這一課可能在談什麼？"
+          },
+          {
+            "indent": 1,
+            "text": "是的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴交通建設如何擴大人們的生活圈"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵產業進駐如何帶動地方人口與就業"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶臺灣如何從農業社會轉為工業社會"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷都市與鄉村各自面臨哪些發展困境"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑸政府如何推動土地改革改善農民生活"
+          },
+          {
+            "indent": 1,
+            "text": "二、基礎理解題，正確的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "text": "⒈課本第 58 頁「人口點子圖」中，點越多代表什麼意思？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴當地人口數較多"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵當地人口數較少"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶當地出生人口比例較高"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷當地人口成長速度較快"
+          },
+          {
+            "indent": 1,
+            "text": "⒉產業進駐地方後，通常會帶來什麼影響？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴就業機會減少，人口外移"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵商店與公共設施逐漸減少"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶當地需求提高，生活風貌改變"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷交通建設停止，居民不易移動"
+          },
+          {
+            "indent": 1,
+            "text": "⒊中部科學園區成立後，政府增闢寬廣的道路，主要是因應什麼需求？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴推廣農產品銷售"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵增加觀光景點門票收入"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶運送貨物、舒緩交通壅塞"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷減少園區附近就業人口"
+          },
+          {
+            "indent": 1,
+            "text": "⒋在經濟發展過程中，若未妥善處理廢棄物，最可能造成什麼問題？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴交通運輸需求增加，道路容易壅塞"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵地方就業機會減少，人口逐漸外移"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶工廠生產成本提高，產品價格上漲"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷環境受到汙染，居民生活品質下降"
+          },
+          {
+            "indent": 1,
+            "text": "⒌為了減緩鄉村人口老化、促進地方發展，可以採取哪一項做法？（複選）"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴增設長照據點，改善高齡居民照護服務"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵改善交通路網，方便居民往返都市工作"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶鼓勵青年返鄉，結合在地特色發展產業"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷舉辦節慶活動，吸引遊客短暫到訪消費"
+          },
+          {
+            "indent": 1,
+            "text": "三、簡答題。"
+          },
+          {
+            "indent": 1,
+            "text": "⒈「個人每天從家裡到學校、補習班或商店等活動範圍，稱為☆。」請問☆指的是什麼？"
+          },
+          {
+            "indent": 2,
+            "text": "答：(*生活圈*)"
+          },
+          {
+            "indent": 1,
+            "text": "⒉交通便利後，人們的生活圈會逐漸擴大還是縮小呢？"
+          },
+          {
+            "indent": 2,
+            "text": "答：(*擴大*)"
+          },
+          {
+            "indent": 1,
+            "text": "⒊臺北市、新北市、桃園市、臺中市、臺南市和高雄市合稱為什麼呢？"
+          },
+          {
+            "indent": 2,
+            "text": "答：(*六都*)"
+          },
+          {
+            "indent": 1,
+            "text": "⒋鄉村因工作機會較少，容易出現青壯年人口什麼問題？"
+          },
+          {
+            "indent": 2,
+            "text": "答：(*外流／外移*)"
+          }
+        ]
       }
-    ],
-    "practices": [
-      {
-        "ex": "與( 更好 )的( 自己 )( 相遇 )",
-        "pr": "與( 難忘 )的( 朋友 )( 重逢 )"
-      },
-      {
-        "ex": "( 春風 )( 輕柔 )的( 拂過 )( 杏樹林 )",
-        "pr": "( 地震 )( 無情 )的( 摧毀 )( 城鎮 )"
-      },
-      {
-        "ex": "不論( 地位高低 )，只要( 人們有心學習 )，( 孔子 )都( 願意教導 )。",
-        "pr": "不論( 多麼艱難 )，只要( 努力嘗試 )，( 理想 )都( 能夠實現 )。"
-      }
-    ],
-    "sentences": [
-      {
-        "word": "有時……有時……",
-        "ex": "暑假的週末，爸媽(有時)會帶我們去爬山，高興(時)則一起去海邊玩耍。"
-      }
-    ],
-    "task4": {
-      "theme": "先敘後議",
-      "analyst": "課文以兩則《論語》中的經典語錄，印證孔子如何「因材施教」並啟發學生對「學習」的觀念。<br>將別人說過的話語使用到文章中來加強說服力的修辭手法稱為「引用」。<br>本課希望學生引用孔子的金句並聯想相關生活經驗，將「記敘」與「議論」兩種表述方式結合，寫一篇「先敘後議」的文章。",
-      "magic": "一、從《論語》中「學習」的道理，思考相關生活經驗：課文中第一則「溫故而知新，可以為師矣」說的是學習知識的方法；第二則「三人行，必有我師焉」談的是學習他人的態度。學生可從道理中省思日常經驗，寫出相符的生活故事。<br>二、先敘後議時「敘事」要清楚完整，「說理」要條理深刻：要掌握幾個要領：1. 選擇熟悉而真實的典型事例；2. 敘事時起因、經過、結果要完整，並生動描繪細節，與道理有關的部分詳述，無關則略述；3. 勤於省思感悟，從實踐中進行理性思考。<br>三、認識「引用修辭」，學習引用名言警句的要領：引用可分「明引」與「暗引」。引用名言後，必須針對事件歸納道理，申論對自己的影響，並在最後總結事件的道理領悟以呼應論點。",
-      "qa": {
-        "q": "什麼是「先敘後議」的寫作技巧？",
-        "a": "在文章的前半段先詳細敘述事件（包含起因、經過和結果），結論再歸納自己的心得或道理啟發。"
-      },
-      "mc": {
-        "q": "在寫作中運用「引用修辭」有什麼好處？",
-        "options": [
-          "(A) 可以增強道理的說服力。",
-          "(B) 能夠讓文章的字數瞬間變多。",
-          "(C) 使文章完全變成抒情文。",
-          "(D) 讓讀者看不懂文章的含義。"
-        ],
-        "a": "(A)"
-      }
-    }
+    ]
   },
   {
     "id": "lesson-4",
-    "lessonNum": "第四課",
-    "lessonName": "向大自然學習",
-    "author": "許雅筑",
-    "task1": [
+    "lessonNum": "第四單元",
+    "lessonName": "臺灣進行式",
+    "summary": [
       {
         "indent": 1,
-        "text": "一.課文段落結構"
+        "text": "多元族群的共榮"
       },
       {
         "indent": 2,
-        "text": "（一）主題概說（總說）"
+        "text": "多元族群的影響"
       },
       {
         "indent": 3,
-        "text": "我們能從自然萬物中，找到無限的*創意*與*發明*。"
+        "text": "飲食文化"
       },
       {
-        "indent": 2,
-        "text": "（二）舉例說明（分說）"
+        "indent": 4,
+        "text": "魯凱族阿粨、閩南蚵仔煎、客家擂茶及糍粑、越南河粉"
       },
       {
-        "indent": 3,
-        "text": "1.觀察蚊子的*口針*，因而設計出「無痛針頭」。"
-      },
-      {
-        "indent": 3,
-        "text": "2.表面含有「奈米結構」的蓮葉，激發人類思考*馬桶*內的抗汙保護層，以及汽車玻璃*奈米材料*處理，讓介面可以保持光亮如新。"
+        "indent": 4,
+        "text": "牛肉麵：川味牛肉麵與伊斯蘭清燉牛肉麵"
       },
       {
         "indent": 3,
-        "text": "3.草原鵰*向上翹起*的翅膀末端*羽毛*，能降低向上飛的阻力；激發了人類改良巨型客機的*機翼*，提升載運的效率。"
+        "text": "建築風格"
       },
       {
-        "indent": 2,
-        "text": "（三）綜合結論（總結）"
+        "indent": 4,
+        "text": "(*眷村*)、吉安慶修院"
       },
       {
         "indent": 3,
-        "text": "向大自然學習請教，改善生活品質。"
+        "text": "宗教信仰"
       },
       {
-        "indent": 1,
-        "text": "二.閱讀理解提問"
-      },
-      {
-        "indent": 1,
-        "text": "1.課文介紹哪三種向大自然學習的發明？"
+        "indent": 4,
+        "text": "文武聖殿（澎湖）、清境火把節"
       },
       {
         "indent": 2,
-        "text": "*①無痛針頭②奈米保護層③巨無霸客機機翼*"
+        "text": "新住民"
+      },
+      {
+        "indent": 3,
+        "text": "因工作、(*婚姻*)歸化我國"
+      },
+      {
+        "indent": 3,
+        "text": "在各行各業發光發熱"
+      },
+      {
+        "indent": 4,
+        "text": "例：主持人、體操選手、臺越重要法律名詞對照表編者"
       },
       {
         "indent": 1,
-        "text": "2.作者提到向大自然學習有那些好處？"
+        "text": "開創友善的社會"
       },
       {
         "indent": 2,
-        "text": "①激發*無限的創意與發明*②*研發或改良*各種產品③改善*生活品質*讓*生活更美好*。"
+        "text": "性別平等"
+      },
+      {
+        "indent": 3,
+        "text": "早期：女性多在家中"
+      },
+      {
+        "indent": 4,
+        "text": "→協助家務、教養子女"
+      },
+      {
+        "indent": 3,
+        "text": "現今：性別刻板印象淡化"
+      },
+      {
+        "indent": 4,
+        "text": "→家人共同分擔家務"
+      },
+      {
+        "indent": 4,
+        "text": "→政府法規保障不同性別"
+      },
+      {
+        "indent": 2,
+        "text": "友善社會"
+      },
+      {
+        "indent": 3,
+        "text": "過去：固有觀念與制度"
+      },
+      {
+        "indent": 4,
+        "text": "→缺乏理解尊重、部分族群權益犧牲"
+      },
+      {
+        "indent": 4,
+        "text": "例：(*原住民族*)姓名權"
+      },
+      {
+        "indent": 3,
+        "text": "現今：透過教育、(*立法*)與民間力量"
+      },
+      {
+        "indent": 4,
+        "text": "→弱勢群體權益逐漸獲得保障"
+      },
+      {
+        "indent": 4,
+        "text": "例：身心障礙者、年長者與兒童"
       },
       {
         "indent": 1,
-        "text": "3.請歸納蚊子叮咬過程及讓人嘖嘖稱奇的技巧？"
+        "text": "與世界做朋友"
       },
       {
         "indent": 2,
-        "text": "蚊子的*六*根小針，吸血時，最外側兩根*鋸齒狀刺針劃破皮膚*，減少接觸*神經*面積，降低疼痛；另外兩根*撐開皮膚*，露出*空隙*；用一根針注入讓*血管擴張*物質，保持*血液流動*；最後用僅剩的針插入*血管*吸血。"
+        "text": "國際困境與突破"
       },
       {
-        "indent": 1,
-        "text": "4.這篇說明文有圖片和文字解說，你覺得那些圖對理解難懂的科學概念有幫助？"
+        "indent": 3,
+        "text": "民國 60 年退出(*聯合國*)→政治、外交受不公平對待"
       },
       {
-        "indent": 2,
-        "text": "哪個圖片：*蚊子叮咬的圖片*"
-      },
-      {
-        "indent": 2,
-        "text": "印象深刻之處：*圖片畫的內容很大且清晰，還有文字輔助說明，讓人有開眼界之感。*"
-      },
-      {
-        "indent": 1,
-        "text": "5.珍妮．班亞斯說：「我們正和一群天才生活在地球上，而它們總是知道如何從容不迫的活下來！」對這句話你有什麼想法？"
+        "indent": 4,
+        "text": "例：無法使用國旗參與奧運，僅能使用中華奧會會旗"
       },
       {
         "indent": 2,
-        "text": "*我十分贊同學習大自然生物的智慧及勇氣，例如森林大火一切燃燒殆盡，但有些種子運用技巧讓自己掩埋在灰燼中，等待時機出現，便鑽出土壤重新來過。這種堅強及耐性，是人類極需學習的。*"
+        "text": "當我們同在一起"
       },
       {
-        "indent": 1,
-        "text": "PS：看似渺小又沒有影響力的大自然生物，憑藉著與天俱來或演化而成的生存技巧，和環境與時俱進共謀出路。所謂｢一枝草一點露｣，都應友善看待及抱持共存共榮觀念，人類雖自詡為萬物之靈，殊不知最有智慧最有膽識的，可能正隱身在不起眼的角落。"
+        "indent": 3,
+        "text": "國際參與 (政府組織、民間參與)"
+      },
+      {
+        "indent": 4,
+        "text": "政府組織 →例：國際合作發展基金會"
+      },
+      {
+        "indent": 4,
+        "text": "民間參與 →例：台灣路竹會"
+      },
+      {
+        "indent": 3,
+        "text": "(*經貿*)交流 (加入經濟組織、功能、尚未加入)"
+      },
+      {
+        "indent": 4,
+        "text": "加入經濟組織 →例：APEC、(*WTO*)"
+      },
+      {
+        "indent": 4,
+        "text": "功能 →促進貿易合作、降低關稅、促進商品自由流通"
+      },
+      {
+        "indent": 4,
+        "text": "尚未加入 →CPTPP"
+      },
+      {
+        "indent": 2,
+        "text": "新冠疫情"
+      },
+      {
+        "indent": 3,
+        "text": "世界各國缺乏口罩和防護裝備→我國積極捐贈醫療物資"
+      },
+      {
+        "indent": 3,
+        "text": "我國欠缺新冠疫苗→美國、日本、捷克等國捐贈疫苗"
+      },
+      {
+        "indent": 2,
+        "text": "世界公民"
+      },
+      {
+        "indent": 3,
+        "text": "臺灣的(*多元文化*)、良好經濟發展、科技、醫療及民主制度"
+      },
+      {
+        "indent": 4,
+        "text": "→成為世界重要國家之一"
+      },
+      {
+        "indent": 3,
+        "text": "善盡社會責任，以自身文化與經驗和世界交流"
+      },
+      {
+        "indent": 4,
+        "text": "例：西元 2011 年，日本大地震，我國發起募款"
+      },
+      {
+        "indent": 4,
+        "text": "→西元 2021 年，我國欠缺新冠疫苗，日本贈送"
       }
     ],
-    "quiz": [
+    "prepSheets": [
       {
-        "q": "學者珍妮·班亞斯口中的「天才」，是指誰？",
-        "options": [
-          "專職研究的科學家",
-          "研發的特殊機器人",
-          "動物園裡的動植物",
-          "大自然裡的動植物"
-        ],
-        "a": 4
+        "id": "4-1",
+        "title": "4-1",
+        "content": [
+          {
+            "indent": 1,
+            "text": "一、請先看看課本的標題、圖片，猜猜看這一課可能在談什麼？"
+          },
+          {
+            "indent": 1,
+            "text": "是的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴不同族群要有相同文化，才能一起生活"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵比較各族群來臺後的居住地點與人口比例"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶移居者如何保留原有文化，也與當地生活互相融合"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷從地景、飲食、信仰與節慶中，觀察族群交流的特色"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑸不同族群在不同時期來到臺灣，留下生活與文化痕跡"
+          },
+          {
+            "indent": 1,
+            "text": "二、基礎理解題，正確的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "text": "⒈觀察課本第 70 頁，吉安慶修院在日治時期曾經具有什麼功能？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴移工休閒活動中心"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵移民村的信仰中心"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶港口貨物集散中心"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷地方產業加工中心"
+          },
+          {
+            "indent": 1,
+            "text": "⒉高雄在日治時期修築高雄港，戰後設置加工區，對當地發展主要帶來哪一項影響？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴促進港口與工業發展，帶動地方變遷"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵結合東南亞文化，形成異國特色商圈"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶保存澎湖移民文化，形成地方信仰中心"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷發展雲南飲食文化，帶動山區聚落形成"
+          },
+          {
+            "indent": 1,
+            "text": "⒊戰爭撤退來臺的軍民建立眷村，常見哪一種建築風貌？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴港口倉庫與大型貨輪"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑵紅磚矮平房、竹籬笆等"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶高科技廠房與寬闊道路"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷大型購物中心與玻璃帷幕"
+          },
+          {
+            "indent": 1,
+            "text": "⒋現今越來越多新住民及其子女成為臺灣重要族群，主要與哪些因素有關？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴土地改革與農民移居"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵交通建設與都市擴張"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶戰後眷村與軍人安置"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷婚姻或工作關係申請歸化"
+          },
+          {
+            "indent": 1,
+            "text": "⒌從吉安鄉、黃埔新村、清境、東協廣場等例子來看，本課主要想說明什麼？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴交通與產業建設帶動人口聚集，改變地方發展"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵各地保存歷史建築，延續過去族群生活的記憶"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶新住民與移工聚集，促成異國商圈與文化交流"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷不同族群遷移交流，留下文化特色並形塑地方風貌"
+          },
+          {
+            "indent": 1,
+            "text": "三、課本地方案例比較表。"
+          },
+          {
+            "indent": 1,
+            "isTable": true,
+            "headers": [
+              "地方案例",
+              "相關族群",
+              "今日特色"
+            ],
+            "rows": [
+              [
+                "花蓮縣吉安鄉",
+                "日本移民、客家人等",
+                "保留(*日*)式街道、寺院\n與聚落記憶"
+              ],
+              [
+                "高雄市文武聖殿",
+                "(*澎湖*)移民",
+                "成為當地重要的民間信\n仰中心"
+              ],
+              [
+                "南投縣清境農場",
+                "雲南移民",
+                "雲南料理、觀光文化、\n(*清境火把*)節"
+              ],
+              [
+                "東協廣場",
+                "新住民、移工、東南\n亞商家",
+                "異國美食街、東南亞商\n品、文化交流空間"
+              ]
+            ]
+          }
+        ]
       },
       {
-        "q": "從課文中判斷，下列何者不是「仿生學」所帶來的影響？",
-        "options": [
-          "創新科技，不斷進步",
-          "改善生活中的不便處",
-          "援救瀕臨絕種的動物",
-          "讓生活變得更加美好"
-        ],
-        "a": 3
+        "id": "4-2",
+        "title": "4-2",
+        "content": [
+          {
+            "indent": 1,
+            "text": "一、請先看看課本的標題、圖片，猜猜看這一課可能在談什麼？"
+          },
+          {
+            "indent": 1,
+            "text": "是的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴交通進步擴大生活圈"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵不同族群形成多元文化"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶社會重視弱勢族群需求"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷人民透過選舉表達意見"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑸女性有更多學習與工作機會"
+          },
+          {
+            "indent": 1,
+            "text": "二、基礎理解題，正確的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "text": "⒈現今社會中，家庭角色與性別刻板印象逐漸淡化，最能說明什麼？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴女性只需要負責家庭內部工作"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵男性不能參與育兒與家務分工"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶不同性別有更多選擇與發展機會"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷所有家庭成員的工作都完全相同"
+          },
+          {
+            "indent": 1,
+            "text": "⒉現今原住民族身分證名字的規定，主要展現哪一項精神？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴把姓名改為行政區名稱"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵限制原住民族使用族語名稱"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶保障原住民族身分與文化權益"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷要求所有人使用同一種姓名格式"
+          },
+          {
+            "indent": 1,
+            "text": "⒊公車設置輪椅停靠區，主要目的是什麼？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴讓乘客站立區變大"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵增加車內廣告空間"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶縮短公車行駛時間"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷保障輪椅使用者需求"
+          },
+          {
+            "indent": 1,
+            "text": "⒋課文提到，姓名雖是個人身分象徵，卻曾在不同政權統治時期受到什麼影響？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴被要求以不同語言書寫"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵必須依照職業更改名字"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶只能使用數字作為名字"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷必須依照居住地重新命名"
+          },
+          {
+            "indent": 1,
+            "text": "⒌性別平等工作法主要保障哪一方面的性別平等？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴家庭分工與家務照顧"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵校園學習與課程選擇"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶就業機會與職場待遇"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷公共空間與設施使用"
+          },
+          {
+            "indent": 1,
+            "text": "三、簡答題。"
+          },
+          {
+            "indent": 1,
+            "text": "⒈「蔡阿信是日治時期赴日本學習的女性，也是臺灣第一位☆。」請問☆指的是什麼？"
+          },
+          {
+            "indent": 2,
+            "text": "答：(*女醫師*)"
+          },
+          {
+            "indent": 1,
+            "text": "⒉「名字」不只是個人稱呼，也和族群文化與◇認同有關，請問◇指的是什麼？"
+          },
+          {
+            "indent": 2,
+            "text": "答：(*身分*)"
+          },
+          {
+            "indent": 1,
+            "text": "⒊「早期社會中，女性常受到家庭角色限制，受○與工作的機會較少。」請問○指的是什麼？"
+          },
+          {
+            "indent": 2,
+            "text": "答：(*教育*)"
+          },
+          {
+            "indent": 1,
+            "text": "⒋「現今政府透過修法，讓原住民族可在身分證上使用□命名。」請問□指的是什麼？"
+          },
+          {
+            "indent": 2,
+            "text": "答：(*族語*)"
+          }
+        ]
       },
       {
-        "q": "關於本課的課文敘述，下列何者錯誤？",
-        "options": [
-          "仿生學就是透過基因改造，創造出相似的生物",
-          "科學家透過觀察大自然，從中得到改善的靈感",
-          "馬桶和汽車的玻璃得以改善，是從荷葉中獲得的靈感",
-          "工程師從草原鵰的翅膀，找到改良A380機翼的方法"
-        ],
-        "a": 1
-      },
-      {
-        "q": "這一課主要想要傳達給我們的意思是？",
-        "options": [
-          "辯論仿生學的重要性",
-          "呈現奈米科技的進步",
-          "重視飛航安全的請求",
-          "大自然是最好的老師"
-        ],
-        "a": 4
+        "id": "4-3",
+        "title": "4-3",
+        "content": [
+          {
+            "indent": 1,
+            "text": "一、請先看看課本的標題、圖片，猜猜看這一課可能在談什麼？"
+          },
+          {
+            "indent": 1,
+            "text": "是的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴新住民文化讓臺灣社會更加多元"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵交通建設讓居民的生活圈逐漸擴大"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶政府與民間能透過援助行動關懷世界"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷我國透過經貿組織，和各國進行交流"
+          },
+          {
+            "indent": 1,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑸我國參與國際活動時，可能面臨外交限制"
+          },
+          {
+            "indent": 1,
+            "text": "二、基礎理解題，正確的請打Ｖ。"
+          },
+          {
+            "indent": 1,
+            "text": "⒈我國在民國 60 年退出哪一個國際組織後，國際參與受到許多限制？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴亞太經濟合作會議"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵世界貿易組織"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶聯合國"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷跨太平洋夥伴全面進步協定"
+          },
+          {
+            "indent": 1,
+            "text": "⒉國際合作發展基金會的工作內容包含下列哪一項？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴徵收關稅、管理進口商品與審查預算"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵舉辦奧運、制定比賽規則與管理會旗"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶技術協助、人道援助與永續發展推廣"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷辦理戶口調查、土地測量與地方選舉"
+          },
+          {
+            "indent": 1,
+            "text": "⒊從政府與民間共同參與國際活動來看，最能說明我國展現什麼？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑴作為世界公民的貢獻與活力"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵把國際交流限制在經貿領域"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶只依靠政府處理所有國際事務"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷以參與國際活動取代國內發展"
+          },
+          {
+            "indent": 1,
+            "text": "⒋WTO 成立的目的之一，是為了降低關稅並促進什麼？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴人口移動與地方發展"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵醫療援助與疫苗捐贈"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑶族群文化與飲食交流"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑷商品自由流通與公平競爭"
+          },
+          {
+            "indent": 1,
+            "text": "⒌未加入區域性經濟貿易組織的國家，可能面臨哪一項挑戰？"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑴自動取得較低關稅"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑵不用再與其他國家貿易"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": true,
+            "text": "⑶被排除在優惠貿易之外"
+          },
+          {
+            "indent": 2,
+            "isCheckbox": true,
+            "isAnswer": false,
+            "text": "⑷能直接成為所有組織會員"
+          },
+          {
+            "indent": 1,
+            "text": "三、APEC、WTO、CPTPP 比較表。"
+          },
+          {
+            "indent": 1,
+            "isTable": true,
+            "headers": [
+              "組織",
+              "亞太經濟合作會議\n(APEC)",
+              "(*世界貿易組織*)\n(WTO)",
+              "跨太平洋夥伴全面\n進步協定((*CPTPP*))"
+            ],
+            "rows": [
+              [
+                "目的",
+                "促進亞洲與(*太平洋*)\n地區的經貿合作",
+                "降低關稅、促進\n商品自由流通與\n公平競爭",
+                "擴大成員國間市\n場、降低關稅並\n增加貿易機會"
+              ],
+              [
+                "我國參與\n情形",
+                "民國(*80*)年加入",
+                "民國(*91*)年成為\n正式會員",
+                "西元 2021 年提出\n申請，尚未加入"
+              ]
+            ]
+          }
+        ]
       }
-    ],
-    "practices": [
-      {
-        "ex": "( 迎 )著( 風 )，就( 飛 )向( 天邊 )",
-        "pr": "( 提 )著( 筆 )，就( 寫 )出( 文章 ) / ( 划 )著( 水 )，就( 游 )到( 海底 )"
-      },
-      {
-        "ex": "鳥兒( 拍拍 )( 翅膀 )，就( 飛上天 )",
-        "pr": "魚兒( 擺擺 )( 尾巴 )，就( 游到 )( 海底 )"
-      },
-      {
-        "ex": "小( 種子 )，( 依附 )在( 動物 )的( 毛皮 )上，( 旅行 )去。",
-        "pr": "老人家( 拿著 )( 筆 )，( 勾勒 )出( 生動 )的( 生活 )。"
-      },
-      {
-        "ex": "( 擁有 )數( 十億 )年( 智慧 )的( 大自然 )，給了( 我們 )( 許多 )的( 啟發 )。",
-        "pr": "(本題無提供練習句)"
-      },
-      {
-        "ex": "若是( 想 )( 創造 )出( 未來 )的( 成功 )，也許( 最快 )的( 捷徑 )是( 向 )( 大自然 )( 請教 )。",
-        "pr": "若是( 想要 )( 創造 )出( 美好 )的( 未來 ) / ( 想要 )( 勾勒 )出( 生動 )的( 外貌 ) / ( 想要 )( 激發 )出( 無限 )的( 創意 )。"
-      },
-      {
-        "ex": "與其( 在 )( 舞臺 )上( 發光 )( 發熱 )，不如( 在 )( 每日 )的( 生活 )中( 努力不懈 )。",
-        "pr": "與其( 遇到 )( 難解 )的( 問題 )，不如( 試著 )( 向 )( 大自然 )( 尋求 )( 解答 )。"
-      }
-    ],
-    "task4": {
-      "theme": "激發創意思考，題目自訂",
-      "analyst": "課文是一篇介紹科學家如何透過動植物構造激發創意，設計出改善生活產品的「科普文章」。<br>本課引導同學們放飛想像力，設計一件改善生活的發明。<br>寫作建議按照「發明三部曲」：動機、特色、貢獻來進行組材與布局。",
-      "magic": "一、瞭解發明的創意來自觀察生活，練習激發創意的常用方法：發明靈感來自於觀察自然與生活，基礎是「創意思考」。常見的方法包含：組合（結合不同事物）、改良（強化舊產品功能）、變形（改變形狀或結構）、移植（將某技術應用到另一領域）、重組（分解後重新組合）。<br>二、依照「發明三部曲」：動機、特色、貢獻，組材布局：1. 發明動機：從察覺生活需求或遭遇的困境作為創新切入點；2. 特色：運用「並列結構段」和關聯詞，將發明物的構造與功能面面俱到地介紹；3. 貢獻：說明對生活的影響，可模仿廣告文案讓使用者現身說法。",
-      "qa": {
-        "q": "寫作本課文章建議按照「發明三部曲」來組材與布局，這三部曲分別代表哪些內容？",
-        "a": "1. 動機（從生活需求或產品缺點找到創新切入點）；2. 特色（介紹發明物外觀、結構、特性、功能與用法）；3. 貢獻（說明發明對生活的影響與幫助）。"
-      },
-      "mc": {
-        "q": "把兩個或兩個以上的不同事物組合在一起，產生一種新事物，使之兼具兩種事物的功能。這是屬於哪一種激發創意的方法？",
-        "options": [
-          "(A) 變形",
-          "(B) 改良",
-          "(C) 移植",
-          "(D) 組合"
-        ],
-        "a": "(D)"
-      }
-    }
-  },
-  {
-    "id": "lesson-5",
-    "lessonNum": "第五課",
-    "lessonName": "樹的聯想",
-    "author": "宋晶宜",
-    "task1": [
-      {
-        "indent": 1,
-        "text": "一.課文段落結構"
-      },
-      {
-        "indent": 2,
-        "text": "（一）觀樹"
-      },
-      {
-        "indent": 3,
-        "text": "1.（1-3段）從*車窗*觀察路旁一棵很美的樹，訴說*堅強*而*漫長*的故事。"
-      },
-      {
-        "indent": 3,
-        "text": "2.（第4段）喜歡樹梢的*多情*、樹蔭*陽光*的*溫柔*，有不同風姿。"
-      },
-      {
-        "indent": 3,
-        "text": "3.（5、6段）朋友像樹，樹蔭*遮陽*、樹幹給*信心*；樹像朋友，清涼、*雋永*、踏實又*穩重*。"
-      },
-      {
-        "indent": 3,
-        "text": "4.（第7段）*慶幸*樹未被砍，向*新生*的日子道早安。"
-      },
-      {
-        "indent": 2,
-        "text": "（二）種樹"
-      },
-      {
-        "indent": 3,
-        "text": "1.（第8段）種樹真好，春天*開花*，秋天*結實*。"
-      },
-      {
-        "indent": 3,
-        "text": "2.（9、10段）想問：校園裡的樹，是誰種下的？"
-      },
-      {
-        "indent": 3,
-        "text": "3.（11-13段）種樹當下，對樹能為他人帶來喜悅和舒適*始料未及*。"
-      },
-      {
-        "indent": 3,
-        "text": "4.（第14段）種樹和*看書*一樣，欣賞花和品嚐果之餘，同感*情懷*。"
-      },
-      {
-        "indent": 3,
-        "text": "5.（15、16段）種樹的善念是*一脈相傳*；享受同時，也要試想能做些什麼？"
-      },
-      {
-        "indent": 1,
-        "text": "二.閱讀理解提問"
-      },
-      {
-        "indent": 1,
-        "text": "1.為什麼｢那株樹｣能讓作者急躁的心情安靜下來？"
-      },
-      {
-        "indent": 2,
-        "text": "*樹穩重且安靜地矗立在原處，在心生嚮往的同時，散發一股寧靜的力量。*"
-      },
-      {
-        "indent": 1,
-        "text": "2.請從課文內容找出，作者對花和樹的評價有何不同？"
-      },
-      {
-        "indent": 2,
-        "text": "花：①*只能讓人享受一次*→時間短暫不長久②*帶給人激情*→過後不留痕跡"
-      },
-      {
-        "indent": 2,
-        "text": "樹：①總有不同風姿，從樹梢找*風的多情*，從樹蔭找*陽光的溫柔*→展現多變風貌"
-      },
-      {
-        "indent": 2,
-        "text": "②朋友像樹，樹蔭*遮陽*、樹幹*給信心*→伸出援手、默默支持"
-      },
-      {
-        "indent": 2,
-        "text": "③有不變的情懷，帶來*清涼*、*雋永*、*踏實又穩重*→穩定可靠值得信賴"
-      },
-      {
-        "indent": 1,
-        "text": "3.作者喜愛樹，哪些線索可以窺出？"
-      },
-      {
-        "indent": 2,
-        "text": "*①原本急躁的心情，霎時安靜下來②有別一般人喜歡花，更愛樹的不同風姿③把樹比喻成朋友，像樹蔭、樹幹，遮陽給信心；帶來不變的情懷。④慶幸哪株樹沒被砍掉，對種樹的人表達敬重和謝意。*"
-      },
-      {
-        "indent": 1,
-        "text": "4.作者在種樹文章中，突然談到喜歡看書，請你試著梳理深層想法？"
-      },
-      {
-        "indent": 2,
-        "text": "*①在書中找到平安、自在、高尚、豁達的道理②種樹亦同，欣賞花朵、品嘗美果時，同理種樹人的情懷。*"
-      },
-      {
-        "indent": 1,
-        "text": "5.這篇文章對樹的外貌較無描繪，而是著重在樹的內在及感受。屬於正確描述者打✓"
-      },
-      {
-        "indent": 2,
-        "text": "（*　*）樹的綠化對地球很重要，要持之以恆"
-      },
-      {
-        "indent": 2,
-        "text": "（*✓*）喜歡樹木的人，覺得樹木像沉穩踏實的朋友"
-      },
-      {
-        "indent": 2,
-        "text": "（*✓*）樹和花相比，花的瞬間美麗，遠不及樹的雋永不變"
-      },
-      {
-        "indent": 2,
-        "text": "（*　*）種樹的人，就是要享受開花結果的喜悅"
-      },
-      {
-        "indent": 2,
-        "text": "（*✓*）不能滿足於樹帶來的好處，要成為一脈相傳的傳遞者"
-      },
-      {
-        "indent": 2,
-        "text": "（*✓*）期許大家能像樹木一樣，成為替他人提供綠蔭的人。"
-      },
-      {
-        "indent": 1,
-        "text": "6.作者為何要以「一念之間，又一株新苗栽入土中」結尾？"
-      },
-      {
-        "indent": 2,
-        "text": "*她的理念是希望種樹的善念一脈相傳，像接棒一樣永不停止。所以，這句話留下伏筆，意味著種樹的使命生生不息，不停歇不中斷。*"
-      }
-    ],
-    "quiz": [
-      {
-        "q": "下列何者不是作者提到愛樹的原因是什麼？",
-        "options": [
-          "樹會讓人感覺清涼",
-          "樹上能夠結滿果實",
-          "觀樹總有不同風姿",
-          "樹像朋友穩健可靠"
-        ],
-        "a": 2
-      },
-      {
-        "q": "下列何者不是課文中所要表達的觀點？",
-        "options": [
-          "介紹樹木的外型及種類",
-          "借樹抒發對朋友的觀點",
-          "探討為什麼要種樹的原因",
-          "表明自己對樹的喜愛之情"
-        ],
-        "a": 1
-      },
-      {
-        "q": "「可是當你失意的時候，他卻會出現在你身邊，像樹蔭為你遮陽，又像樹幹給你信心。」下列哪一個語詞最符合句子所想要表達的情境？",
-        "options": [
-          "錦上添花",
-          "雪中送炭",
-          "落井下石",
-          "樹大招風"
-        ],
-        "a": 2
-      },
-      {
-        "q": "「許多事都和種樹的道理一樣。」作者舉了朋友的杏仁酥作為例子，請問「種樹的道理」是什麼？",
-        "options": [
-          "種善因，結善果",
-          "前人種樹，後人乘涼",
-          "人無千日好，花無百日紅",
-          "別用爬樹的能力評斷一條魚"
-        ],
-        "a": 1
-      }
-    ],
-    "practices": [
-      {
-        "ex": "得到( 綠蔭 )的( 庇護 )",
-        "pr": "得到( 家人 )的( 支持 )"
-      },
-      {
-        "ex": "( 有些朋友 )，雖然( 沉默不語 )，可是( 當他站在你的身旁 )，會( 讓你感到安心 )。",
-        "pr": "( 有些目標 )，雖然( 難以實現 )，可是( 一旦成功突破 )，會( 令人激昂興奮 )。"
-      }
-    ],
-    "sentences": [
-      {
-        "word": "不像……卻會像……",
-        "ex": "老師(不像)父母時刻照顧我，(卻會像)太陽一樣，給我溫暖，指引人生的方向。"
-      }
-    ],
-    "task4": {
-      "theme": "寫物喻人、藉物明理。題目自訂",
-      "analyst": "本課引導同學們以任一種植物為題材，寫一篇詠物的文章。<br>寫作時要抓住植物具有象徵意義的外形特徵，並展開聯想，引申出此植物蘊含的精神或哲理。<br>文章可採用「總分總」或「實題虛寫」兩種結構，並運用「寫物喻人」與「藉物明理」的詠物技法。",
-      "magic": "一、能按照空間順序，觀察、描寫植物的外形特徵：首先要掌握獨特的外形特徵，按照根、莖、幹、枝、葉、花、果實等空間順序描寫以力求條理清楚。其次要調動各種感官細緻觀察，並運用比喻、擬人或對比等修辭技巧，側重描摹幾個特點以突出重點。<br>二、能「寫物喻人」、「藉物明理」，從植物特徵聯想君子的品格或闡明人生的道理：「詠物」是透過描繪客觀事物表現作者志向。「寫物喻人」是藉外形特徵比喻品德（例如仙人掌莖部肥大象徵儲備知識），可採總分總結構。「藉物明理」則是從讚揚事物著手說明深刻道理（例如由腳印聯想人生足跡）。",
-      "qa": {
-        "q": "請簡述「寫物喻人」與「藉物明理」兩種詠物寫作技巧有何不同？",
-        "a": "「寫物喻人」是藉描寫物的外形、特徵，點出其精神品質並以此比喻人性；「藉物明理」則是從讚揚或評析某一事物著手，用以說明某個深刻的道理。"
-      },
-      "mc": {
-        "q": "描摹植物時，為了做到條理清楚、層次分明，通常會建議按照什麼順序來觀察及描寫外形特徵？",
-        "options": [
-          "(A) 空間順序（根、莖、幹、枝、葉、花、果實等）",
-          "(B) 時間順序（從早到晚）",
-          "(C) 價格順序（從便宜到昂貴）",
-          "(D) 氣候順序（從晴天到雨天）"
-        ],
-        "a": "(A)"
-      }
-    }
-  },
-  {
-    "id": "lesson-6",
-    "lessonNum": "第六課",
-    "lessonName": "善用自嘲，展現幽默",
-    "author": "陳靜婷",
-    "task1": [
-      {
-        "indent": 1,
-        "text": "一.課文段落結構"
-      },
-      {
-        "indent": 1,
-        "text": "<table class=\"w-full border-collapse border border-slate-400 mt-2 mb-4 text-sm text-center\">\n  <tbody>\n    <tr>\n      <td rowspan=\"2\" class=\"border border-slate-400 p-2 bg-slate-100 font-bold w-12\">論點</td>\n      <td class=\"border border-slate-400 p-2 bg-slate-100 w-12\">引題</td>\n      <td colspan=\"4\" class=\"border border-slate-400 p-2 text-left\">\n        ( 1.引用名人的話 2.事件案例 3.統計說明 4.新聞 5.提出疑問 6.*解釋* )<br/>\n        幽默是透過*風趣詼諧*語言，運用*機智*，巧妙與人應對的能力。\n      </td>\n    </tr>\n    <tr>\n      <td class=\"border border-slate-400 p-2 bg-slate-100\">觀點</td>\n      <td colspan=\"4\" class=\"border border-slate-400 p-2 text-left font-bold text-red-600\">*自嘲是最高明的幽默*</td>\n    </tr>\n    <tr>\n      <td rowspan=\"3\" class=\"border border-slate-400 p-2 bg-slate-100 font-bold\">論據<br/><span class=\"text-xs font-normal\">(舉例說明)</span></td>\n      <td class=\"border border-slate-400 p-2 bg-slate-100\">誰的什麼事件</td>\n      <td class=\"border border-slate-400 p-2 bg-slate-100\">發生什麼事</td>\n      <td class=\"border border-slate-400 p-2 bg-slate-100\">結果</td>\n      <td class=\"border border-slate-400 p-2 bg-slate-100\">影響</td>\n    </tr>\n    <tr>\n      <td class=\"border border-slate-400 p-2 text-red-600\">*林肯*</td>\n      <td class=\"border border-slate-400 p-2 text-red-600\">*被對手批評雙面人*</td>\n      <td class=\"border border-slate-400 p-2 text-red-600\">*如果有兩張臉，還會用這麼醜的臉示人嗎*</td>\n      <td class=\"border border-slate-400 p-2 text-red-600\">*觀眾留下正面印象*</td>\n    </tr>\n    <tr>\n      <td class=\"border border-slate-400 p-2 text-red-600\">*男人*</td>\n      <td class=\"border border-slate-400 p-2 text-red-600\">*餐點不來等得不耐煩*</td>\n      <td class=\"border border-slate-400 p-2 text-red-600\">*以乞丐為例，服務生不想服務我*</td>\n      <td class=\"border border-slate-400 p-2 text-red-600\">*透露對乞丐的成見*</td>\n    </tr>\n    <tr>\n      <td colspan=\"2\" class=\"border border-slate-400 p-2 bg-slate-100 font-bold\">論證</td>\n      <td colspan=\"4\" class=\"border border-slate-400 p-2 text-left\">善用正反例說明適當自嘲，才能讓溝通更順利。</td>\n    </tr>\n    <tr>\n      <td colspan=\"2\" class=\"border border-slate-400 p-2 bg-slate-100 font-bold\">結論</td>\n      <td colspan=\"4\" class=\"border border-slate-400 p-2 text-left text-red-600\">*適當的自嘲是自信更是溝通的智慧。*</td>\n    </tr>\n  </tbody>\n</table>"
-      },
-      {
-        "indent": 1,
-        "text": "二.閱讀理解提問"
-      },
-      {
-        "indent": 1,
-        "text": "1.作者提出哪些幽默的優點？"
-      },
-      {
-        "indent": 2,
-        "text": "*①聽者會心一笑②化解尷尬③營造美好談話氣氛*"
-      },
-      {
-        "indent": 1,
-        "text": "2.作者認為幽默最常用的方法為何？那些運用不當會有反效果？"
-      },
-      {
-        "indent": 2,
-        "text": "*①開玩笑②透過挖苦或取笑別人，不僅對他人造成傷害，更可能使人反感，讓局勢僵持不下*"
-      },
-      {
-        "indent": 1,
-        "text": "3.為什麼作者說，自嘲是最高明的幽默？"
-      },
-      {
-        "indent": 2,
-        "text": "*將自己短處或不利處境，靈巧轉移焦點，用言語調侃自己，化解僵局，讓雙方皆大歡喜，這些需要自信及勇氣才能做到。*"
-      },
-      {
-        "indent": 1,
-        "text": "4.林肯被對手批評｢雙面人｣的應對方式、影響和智慧？"
-      },
-      {
-        "indent": 2,
-        "text": "應對：*如果有兩張臉，還會用這麼醜的臉示人嗎﹖觀眾哄堂大笑*。影響：*使觀眾對如此智慧的回應，留下正面印象*。智慧：*懂得在適當時機開自己玩笑，藉此化解緊張氣氛，是敏銳機智。*"
-      },
-      {
-        "indent": 1,
-        "text": "5.論據是舉例，論證是正反兩面加以說明，清楚對比優劣。試以林肯論證說明。"
-      },
-      {
-        "indent": 2,
-        "text": "正面：*以自嘲化解對手批判，留下正面印象。*反面：*若林肯惱羞成怒，甚至口出惡言，現場氣氛尷尬緊張，錯失加分機會。*"
-      },
-      {
-        "indent": 1,
-        "text": "6.自嘲不懂適可而止的論據、論證和影響？"
-      },
-      {
-        "indent": 2,
-        "text": "論據：*男人以乞丐為例表達久候餐點的不滿。*反面論證：*我和乞丐穿得很像，所以服務生不想服務我。*影響：*看似幽默卻透露對乞丐的成見，貶低他人價值說法容易引起反感。*"
-      },
-      {
-        "indent": 1,
-        "text": "7.同上題，請你幫忙想出正面論證的話語，扭轉男人的劣勢？"
-      },
-      {
-        "indent": 2,
-        "text": "正面論證：*我的餐點一定做得很精緻，所以需要這麼久*"
-      }
-    ],
-    "quiz": [
-      {
-        "q": "從課文中可知道，作者認為幽默最高明的方式是？",
-        "options": [
-          "開玩笑",
-          "取笑別人",
-          "挖苦別人",
-          "自嘲自己"
-        ],
-        "a": 4
-      },
-      {
-        "q": "下列何者不是善用「自嘲」的好處？",
-        "options": [
-          "化解危機",
-          "展現智慧",
-          "呈現地位",
-          "溝通順暢"
-        ],
-        "a": 3
-      },
-      {
-        "q": "請依順序排出課文敘述的順序。",
-        "options": [
-          "乙甲丙丁",
-          "甲乙丁丙",
-          "丁乙甲丙",
-          "丙甲乙丁"
-        ],
-        "a": 3
-      },
-      {
-        "q": "下列何者是作者想要在本篇文章中所表達的觀點？",
-        "options": [
-          "自嘲就是不斷貶低自己",
-          "最高明的幽默就是自嘲",
-          "善於自嘲的人，是個遲鈍的人",
-          "會自嘲的人，對自己信心不足"
-        ],
-        "a": 2
-      }
-    ],
-    "practices": [
-      {
-        "ex": "( 轉化 )為( 談吐 )幽默的( 人 )",
-        "pr": "( 變形 )為( 立體 )的( 舞台 ) / ( 化身 )為( 孩子 )的( 保母 )"
-      },
-      {
-        "ex": "( 適當的自嘲 )是一種( 自信 )，更是一種( 溝通的智慧 )。",
-        "pr": "( 同情的體諒 )是一種( 博愛 )，更是一種( 溫暖的包容 )。"
-      }
-    ],
-    "sentences": [
-      {
-        "word": "如果……還會……",
-        "ex": "如果(我們有足夠的存款)，還會(在外頭租房子)嗎？"
-      }
-    ],
-    "task4": {
-      "theme": "寫出議論文的反例",
-      "analyst": "課文是一篇議論表述方式的文章，議論文的基本結構形式為：提出問題、分析問題、解決問題。<br>本課重點介紹「對比結構」與「總分結構」兩個基本的論證結構。<br>教導同學們援引「反例」（正反對照）來揭示某些觀點的侷限性，進而突顯論點的正確性，以此說服讀者生活中處處留心皆學問。",
-      "magic": "一、能運用「對比結構」、「總分結構」兩種論證結構進行議論：合理安排結構能使文章言之有序。「對比結構」是把兩種對立的觀點與材料放在一起比較，需選準統一的對比點；「總分結構」則是開頭先總說確定論點，而後每一段再用不同的角度或分論點闡釋，最後再總結呼應。<br>二、了解「假設論證法」，運用假設複句寫作「反例」：反例是舉出與正例相反情境的例子。可以透過假設相關句式（如「如果…想必」、「假如…就」）寫出反面的「假設例」，藉由正反對照比較來突顯分論點，增強說服力。",
-      "qa": {
-        "q": "在寫作議論文時，援引「反例」作為論證策略有什麼重要的作用？",
-        "a": "援引反例有助於揭示某些觀點的侷限性，從而對照正例，突顯論點的正確性，增強文章的說服力。"
-      },
-      "mc": {
-        "q": "議論文包含了三大要素，請問下列何者「不是」議論文的三大要素之一？",
-        "options": [
-          "(A) 論點",
-          "(B) 論敘",
-          "(C) 論證",
-          "(D) 論據"
-        ],
-        "a": "(B)"
-      }
-    }
+    ]
   }
 ];

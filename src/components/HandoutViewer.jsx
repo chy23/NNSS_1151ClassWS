@@ -33,186 +33,61 @@ const BlankWord = ({ text, globalShow }) => {
   );
 };
 
-/* ── 第六課 HTML 表格專用元件 ── */
-const TableContent = ({ html, globalShow }) => {
-  const ref = useRef(null);
-
-  // 在這階段就把 html 裡的紅字 td 全部轉換掉，避免 re-render 時變回紅字
-  const processedHtml = html
-    .replace(/class="([^"]*)text-red-600([^"]*)"/g, (match, p1, p2) => {
-      // 把 text-red-600 拿掉，避免 td 影響
-      return `class="${p1}${p2}"`;
-    })
-    .replace(/\*(.*?)\*/g, (_, text) => {
-      return `<span class="table-blank cursor-pointer font-bold transition-colors text-transparent bg-slate-100 px-1 border-b-[3px] border-slate-400 select-none">${text}</span>`;
-    });
-
-  // 同步全域顯示狀態，並支援點擊切換
-  useEffect(() => {
-    if (!ref.current) return;
-    ref.current.querySelectorAll('.table-blank').forEach(blank => {
-      // 判斷該格子是否已經被手動揭開
-      const isRevealed = blank.classList.contains('text-red-600');
-      // 如果 globalShow 為 true，強迫顯示；如果為 false，隱藏 (除非有手動揭開)
-      if (globalShow) {
-        blank.classList.remove('text-transparent', 'bg-slate-100', 'border-slate-400');
-        blank.classList.add('text-red-600', 'bg-red-50', 'border-red-300');
-      } else {
-        if (!isRevealed) {
-          blank.classList.add('text-transparent', 'bg-slate-100', 'border-slate-400');
-          blank.classList.remove('text-red-600', 'bg-red-50', 'border-red-300');
-        }
-      }
-    });
-  }, [globalShow]);
-
-  const handleClick = (e) => {
-    if (checkTool()) return;
-    const blank = e.target.closest('.table-blank');
-    if (blank) {
-      e.stopPropagation();
-      const isHidden = blank.classList.contains('text-transparent');
-      if (isHidden) {
-        blank.classList.remove('text-transparent', 'bg-slate-100', 'border-slate-400');
-        blank.classList.add('text-red-600', 'bg-red-50', 'border-red-300');
-      } else {
-        blank.classList.add('text-transparent', 'bg-slate-100', 'border-slate-400');
-        blank.classList.remove('text-red-600', 'bg-red-50', 'border-red-300');
-      }
-    }
-  };
-
-  return <div ref={ref} onClick={handleClick} dangerouslySetInnerHTML={{ __html: processedHtml }} />;
-};
-
-const parseTask1 = (text, globalShow) => {
-  if (text.includes('<table')) return <TableContent html={text} globalShow={globalShow} />;
-  const parts = text.split(/\*(.*?)\*/g);
+const parseText = (text, globalShow) => {
+  if (!text) return null;
+  const parts = text.split(/\(\*(.*?)\*\)/g);
   return parts.map((part, i) => {
     if (i % 2 === 1) return <BlankWord key={i} text={part} globalShow={globalShow} />;
     return <span key={i} dangerouslySetInnerHTML={{ __html: part }} />;
   });
 };
 
-const parsePractice = (text, globalShow) => {
-  if (text === "(本題無提供練習句)") return <span>(本題無提供練習句)</span>;
-  const parts = text.split(/\((.*?)\)/g);
-  return parts.map((part, i) => {
-    if (i % 2 === 1) return (
-      <span key={i} className="inline-flex items-center text-blue-700 font-bold mx-1">
-        (<BlankWord text={part} globalShow={globalShow} />)
-      </span>
-    );
-    return <span key={i}>{part}</span>;
-  });
-};
-
-const QuizBlock = ({ qIdx, q, options, a, showAllAnswers }) => {
+const CheckboxItem = ({ item, globalShow }) => {
   const [localState, setLocalState] = useState(null);
-  const isShow = localState !== null ? localState : showAllAnswers;
+  const isShow = localState !== null ? localState : globalShow;
   
   const toggle = (e) => {
     if (checkTool()) return;
     setLocalState(!isShow);
   };
+
+  const isCorrect = item.isAnswer;
   return (
-    <div className="mb-6 cursor-pointer select-none group" onClick={toggle}>
-      <div className="font-bold text-slate-800 mb-2 group-hover:text-blue-700 transition-colors" style={{ marginLeft: '2em' }}>
-        {qIdx + 1}. {q}
-      </div>
-      <ul className="space-y-3" style={{ marginLeft: '4em' }}>
-        {options.map((opt, oIdx) => {
-          const isCorrect = (oIdx + 1 === a);
-          return (
-            <li key={oIdx} className="flex items-start data-quiz-opt" data-correct={isCorrect}>
-              <span className={`mr-2 font-bold leading-none ${isShow && isCorrect ? 'text-red-600' : 'text-slate-400'}`}>
-                {isShow && isCorrect ? '✓' : '□'}
-              </span>
-              <span className={isShow && isCorrect ? 'text-red-600 font-bold' : 'text-slate-700'}>{opt}</span>
-            </li>
-          );
-        })}
-      </ul>
+    <div className="flex items-start data-quiz-opt cursor-pointer group select-none my-1" onClick={toggle} data-correct={isCorrect}>
+      <span className={`mr-2 font-bold leading-none ${isShow && isCorrect ? 'text-red-600' : 'text-slate-400'}`}>
+        {isShow && isCorrect ? '✓' : '□'}
+      </span>
+      <span className={isShow && isCorrect ? 'text-red-600 font-bold' : 'text-slate-700'}>
+        {parseText(item.text, globalShow)}
+      </span>
     </div>
   );
 };
 
-const PracticeBlock = ({ index, p, showAllAnswers }) => {
-  // 移除 onClick 以避免「點擊一格跳出多格」的狀況，讓使用者必須準確點擊空格
+const TableContent = ({ headers, rows, globalShow }) => {
   return (
-    <div className="mb-6 select-none group">
-      <div className="font-bold text-slate-800 transition-colors" style={{ marginLeft: '2em' }}>
-        例句{['一','二','三','四','五','六'][index]}：<span className="font-normal">{p.ex}</span>
-      </div>
-      <div className="font-bold text-slate-800 flex mt-1" style={{ marginLeft: '2em' }}>
-        <span style={{ whiteSpace: 'pre' }}>{index === 0 ? '　  練習：' : '練習：'}</span>
-        <div className="font-normal text-slate-800">{parsePractice(p.pr, showAllAnswers)}</div>
-      </div>
-    </div>
-  );
-};
-
-/* ── 造句：整句隱藏，點擊才顯示 ── */
-const SentenceBlock = ({ word, ex, showAllAnswers }) => {
-  const [showLocal, setShowLocal] = useState(false);
-  const isShow = showAllAnswers || showLocal;
-  const cleanText = ex.replace(/[()]/g, '');
-  return (
-    <div className="mb-6 cursor-pointer select-none group" onClick={(e) => { if (checkTool()) return; setShowLocal(!showLocal); }}>
-      <div className="font-bold text-slate-800 mb-2 group-hover:text-blue-700 transition-colors" style={{ marginLeft: '2em' }}>
-        <span className="bg-slate-200 px-2 py-1 rounded mr-2 text-sm no-print">造句</span>{word}：
-      </div>
-      <div className="leading-relaxed" style={{ marginLeft: '4em' }}>
-        <span
-          className={`inline px-2 font-bold transition-colors border-b-[3px] data-blankword ${isShow ? 'text-red-600 border-red-300 bg-red-50' : 'text-transparent border-slate-400 bg-slate-100'}`}
-          data-text={cleanText}>
-          {cleanText}
-        </span>
-      </div>
-    </div>
-  );
-};
-
-const Task4QA = ({ q, a, showAllAnswers }) => {
-  const [showLocal, setShowLocal] = useState(false);
-  const isShow = showAllAnswers || showLocal;
-  return (
-    <div className="cursor-pointer select-none group" onClick={(e) => { if (checkTool()) return; setShowLocal(!showLocal); }}>
-      <div className="font-bold mb-2 text-slate-800 group-hover:text-blue-700 transition-colors" style={{ marginLeft: '2em' }}>
-        問答題：{q}
-      </div>
-      <div className={`data-qa-ans text-red-600 font-bold leading-relaxed ${isShow ? 'block' : 'hidden'}`} style={{ marginLeft: '4em' }}>
-        解答：{a}
-      </div>
-      <div className={`data-qa-line data-qa-line-break text-slate-300 ${!isShow ? 'block' : 'hidden'}`} style={{ marginLeft: '4em' }}>
-        ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-      </div>
-    </div>
-  );
-};
-
-const Task4MC = ({ q, options, a, showAllAnswers }) => {
-  const [showLocal, setShowLocal] = useState(false);
-  const isShow = showAllAnswers || showLocal;
-  return (
-    <div className="cursor-pointer select-none group" onClick={(e) => { if (checkTool()) return; setShowLocal(!showLocal); }}>
-      <div className="font-bold mb-2 text-slate-800 group-hover:text-blue-700 transition-colors" style={{ marginLeft: '2em' }}>
-        選擇題：{q}
-      </div>
-      <ul className="space-y-2 mb-2 text-slate-700" style={{ marginLeft: '4em' }}>
-        {options.map((opt, oIdx) => (
-          <li key={oIdx} className={`data-quiz-opt ${isShow && opt.startsWith(a) ? "text-red-600 font-bold" : ""}`} data-correct={opt.startsWith(a)}>
-            <span className="hidden">□</span><span>{opt}</span>
-          </li>
+    <table className="w-full border-collapse my-4 text-sm md:text-base">
+      <thead>
+        <tr>
+          {headers.map((h, i) => (
+            <th key={i} className="border border-slate-400 p-2 bg-slate-100 font-bold text-center">
+              {parseText(h, globalShow)}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row, rIdx) => (
+          <tr key={rIdx}>
+            {row.map((cell, cIdx) => (
+              <td key={cIdx} className="border border-slate-400 p-2">
+                {parseText(cell, globalShow)}
+              </td>
+            ))}
+          </tr>
         ))}
-      </ul>
-      <div className={`data-mc-ans text-red-600 font-bold ${isShow ? 'block' : 'hidden'}`} style={{ marginLeft: '4em' }}>
-        解答：{a}
-      </div>
-      <div className={`data-qa-line text-slate-300 ${!isShow ? 'block' : 'hidden'}`} style={{ marginLeft: '4em' }}>
-        ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-      </div>
-    </div>
+      </tbody>
+    </table>
   );
 };
 
@@ -224,9 +99,15 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
   const [exportMargin, setExportMargin] = useState('standard');
   const [zoomLevel, setZoomLevel] = useState(1);
   const [isWidescreen, setIsWidescreen] = useState(false);
+  const [activeTab, setActiveTab] = useState('summary');
 
   useEffect(() => {
     setShowAllAnswers(false);
+    if (lesson?.prepSheets && lesson.prepSheets.length > 0) {
+      setActiveTab(lesson.prepSheets[0].title);
+    } else {
+      setActiveTab('summary');
+    }
     setResetKey(k => k + 1);
   }, [lesson?.id]);
 
@@ -291,24 +172,10 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
       clone.querySelectorAll('.data-blankword-check').forEach(el => {
         el.innerHTML = '　'; el.style.color = '#000'; el.style.background = 'transparent';
       });
-      clone.querySelectorAll('.table-blank').forEach(el => {
-        const len = (el.textContent || '').trim().length;
-        el.innerHTML = '＿'.repeat(len > 0 ? len * 2 : 4);
-        el.style.color = '#000'; el.style.border = 'none'; el.style.background = 'transparent';
-      });
       clone.querySelectorAll('.data-quiz-opt').forEach(el => {
         const icon = el.children[0]; const text = el.children[1];
         if (icon) { icon.innerHTML = '□'; icon.style.color = '#000'; icon.classList.remove('hidden'); }
         if (text) { text.style.color = '#000'; text.style.fontWeight = 'normal'; }
-      });
-      clone.querySelectorAll('.data-qa-ans, .data-mc-ans').forEach(el => el.remove());
-      clone.querySelectorAll('.data-qa-line').forEach(el => {
-        el.style.display = 'block'; el.style.color = '#000';
-        if (el.classList.contains('data-qa-line-break')) {
-          el.innerHTML = '<br>＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿<br>＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿';
-        } else {
-          el.innerHTML = '＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿';
-        }
       });
     } else {
       clone.querySelectorAll('.data-blankword').forEach(el => {
@@ -322,10 +189,6 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
         el.style.fontWeight = val === '✓' ? 'bold' : 'normal';
         el.style.background = 'transparent';
       });
-      clone.querySelectorAll('.table-blank').forEach(el => {
-        el.style.color = '#DC2626'; el.style.background = 'transparent';
-        el.style.borderBottom = 'none'; el.style.textDecoration = 'underline';
-      });
       clone.querySelectorAll('.data-quiz-opt').forEach(el => {
         const isCorrect = el.getAttribute('data-correct') === 'true';
         const icon = el.children[0]; const text = el.children[1];
@@ -337,13 +200,7 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
           if (text) { text.style.color = '#000'; text.style.fontWeight = 'normal'; }
         }
       });
-      clone.querySelectorAll('.data-qa-line').forEach(el => el.remove());
-      clone.querySelectorAll('.data-qa-ans, .data-mc-ans').forEach(el => {
-        el.style.display = 'block'; el.style.color = '#DC2626'; el.style.fontWeight = 'bold';
-      });
     }
-
-
 
     let sizeCss = '21cm 29.7cm';
     if (exportSize === 'B4') sizeCss = '25.7cm 36.4cm';
@@ -362,7 +219,6 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
         body, p, span, div, li, ul, h1, h2, h3, h4 { font-family: "標楷體", "BiauKai", "DFKai-SB", serif !important; line-height: 1.5 !important; }
         body { font-size: 12pt !important; color: #000; }
         h1 { font-size: 16pt !important; font-weight: bold; text-align: center; margin-bottom: 24px; }
-        h2 { font-size: 14pt !important; font-weight: bold; margin-top: 24px; margin-bottom: 12px; }
         table { border-collapse: collapse; width: 100%; }
         td, th { border: 1px solid #94a3b8; padding: 6px 8px; }
       </style>
@@ -375,19 +231,53 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
     const link = document.createElement('a');
     link.href = url;
     const lessonNumber = lesson.id.replace('lesson-', '').padStart(2, '0');
-    link.download = `${lessonNumber}${lesson.lessonNum}課堂單_${lesson.lessonName}_${mode === 'teacher' ? '教用版' : '學用版'}.doc`;
+    let tabName = activeTab === 'summary' ? '課堂重點整理' : activeTab;
+    link.download = `${lessonNumber}_${lesson.lessonNum}_${lesson.lessonName}_${tabName}_${mode === 'teacher' ? '教用版' : '學用版'}.doc`;
     document.body.appendChild(link); link.click(); document.body.removeChild(link);
   };
 
-
-
   if (!lesson) {
-    return <div className="p-10 text-center text-slate-500">請從左側選擇一份課文</div>;
+    return <div className="p-10 text-center text-slate-500">請從左側選擇一份單元</div>;
   }
+
+  const renderContent = () => {
+    let items = [];
+    if (activeTab === 'summary') {
+      items = lesson.summary || [];
+    } else {
+      const sheet = lesson.prepSheets?.find(s => s.title === activeTab);
+      if (sheet) items = sheet.content || [];
+    }
+
+    return (
+      <div className="space-y-2 mt-6">
+        {items.map((item, i) => {
+          if (item.isTable) {
+            return (
+              <div key={i} style={{ marginLeft: `${item.indent * 2}em` }}>
+                <TableContent headers={item.headers} rows={item.rows} globalShow={showAllAnswers} />
+              </div>
+            );
+          }
+          if (item.isCheckbox) {
+            return (
+              <div key={i} style={{ marginLeft: `${item.indent * 2}em` }}>
+                <CheckboxItem item={item} globalShow={showAllAnswers} />
+              </div>
+            );
+          }
+          return (
+            <div key={i} style={{ marginLeft: `${item.indent * 2}em` }} className="leading-relaxed my-1">
+              {parseText(item.text, showAllAnswers)}
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
 
   return (
     <div className="flex flex-col w-full h-full pb-20">
-      {/* 控制台 */}
       <div className="no-print bg-white/80 backdrop-blur-md border-b border-slate-200 p-4 sticky top-0 z-40 flex flex-col md:flex-row justify-between items-center shadow-sm gap-4 shrink-0">
         <div className="font-bold text-xl text-blue-900 flex items-center gap-3">
           {!isSidebarOpen && (
@@ -398,17 +288,14 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
           講義控制台
         </div>
         <div className="flex gap-3 flex-wrap justify-center items-center">
-          {/* 縮放 */}
           <div className="flex items-center gap-1 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
             <button onClick={() => setZoomLevel(z => Math.max(0.5, parseFloat((z - 0.1).toFixed(1))))} className="p-1 hover:bg-white rounded text-slate-600" title="縮小"><ZoomOut size={18} /></button>
             <span className="text-sm font-bold w-12 text-center text-slate-700">{Math.round(zoomLevel * 100)}%</span>
             <button onClick={() => setZoomLevel(z => Math.min(2, parseFloat((z + 0.1).toFixed(1))))} className="p-1 hover:bg-white rounded text-slate-600" title="放大"><ZoomIn size={18} /></button>
           </div>
-          {/* 拉寬 */}
           <button onClick={() => setIsWidescreen(!isWidescreen)} className={`px-3 py-1.5 rounded-lg text-sm font-bold border transition-colors ${isWidescreen ? 'bg-indigo-100 text-indigo-700 border-indigo-200' : 'bg-slate-100 text-slate-600 border-slate-200'}`}>
             {isWidescreen ? '縮回版面' : '拉寬版面'}
           </button>
-          {/* 版面設定 */}
           <div className="flex items-center gap-3 bg-slate-100 px-4 py-2 rounded-lg border border-slate-200">
             <label className="text-sm font-bold text-slate-700 flex items-center">版面：
               <select className="ml-1 border-slate-300 rounded text-sm p-1" value={exportSize} onChange={e => setExportSize(e.target.value)}>
@@ -429,83 +316,50 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
         </div>
       </div>
 
-      {/* 內容區 */}
+      <div className="w-full flex justify-center mt-4 px-6 no-print">
+        <div className="flex space-x-2 border-b border-slate-300 w-full max-w-[850px] overflow-x-auto">
+          {lesson.prepSheets?.map((sheet, idx) => (
+            <button
+              key={idx}
+              onClick={() => setActiveTab(sheet.title)}
+              className={`px-4 py-2 font-bold transition-colors whitespace-nowrap ${activeTab === sheet.title ? 'border-b-2 border-blue-600 text-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+            >
+              預習單 {sheet.title}
+            </button>
+          ))}
+          <button
+            onClick={() => setActiveTab('summary')}
+            className={`px-4 py-2 font-bold transition-colors whitespace-nowrap ${activeTab === 'summary' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+          >
+            課堂重點整理
+          </button>
+        </div>
+      </div>
+
       <div className="flex-1 w-full p-6 flex justify-center overflow-y-auto">
         <div
-          key={`content-${lesson.id}-${resetKey}`}
+          key={`content-${lesson.id}-${activeTab}-${resetKey}`}
           id="printable-area"
           className={`relative w-full ${isWidescreen ? 'max-w-[1200px]' : 'max-w-[850px]'} bg-white p-10 md:p-16 shadow-xl rounded-xl border border-slate-100 content-area self-start`}
           style={{ zoom: zoomLevel }}
         >
-
-          <h1 className="font-bold text-center mb-4 text-slate-800 text-2xl relative z-10">
-            115 五上國語學習講義翰林版 {lesson.lessonNum} {lesson.lessonName} 作者：{lesson.author}
-          </h1>
-          <div className="text-center font-bold text-xl mb-12 text-slate-800">
-            班級：_______ 座號：_______ 姓名：_____________
+          <div className="text-right font-bold text-lg mb-2 text-slate-800">
+            班級：_______ 座號：___ 姓名：_____________
           </div>
+          <h1 className="font-bold text-center mb-8 text-slate-800 text-2xl relative z-10 flex flex-col gap-2">
+            <span>115學年六上社會學習講義南一版</span>
+            <span>
+              {lesson.lessonNum} {lesson.lessonName}
+              {activeTab !== 'summary' ? ` - 預習單 ${activeTab}` : ' - 課堂重點整理'}
+            </span>
+          </h1>
 
           <section className="mb-14">
-            <h2 className="font-bold text-slate-800 text-xl mb-4">任務一、文意理解，深入認識課文</h2>
-            <div className="mb-8 space-y-2">
-              {lesson.task1.map((item, i) => (
-                <div key={i} style={{ marginLeft: `${item.indent * 2}em` }} className={`leading-relaxed ${item.isBox ? 'border-2 border-slate-800 p-4 rounded bg-white my-4 font-bold' : ''}`}>
-                  {parseTask1(item.text, showAllAnswers)}
-                </div>
-              ))}
-            </div>
+             {renderContent()}
           </section>
-
-          <section className="mb-14">
-            <h2 className="font-bold text-slate-800 text-xl mb-4 leading-relaxed">
-              任務二、閱讀測驗，讀完課文之後，你了解課文內容和作者的想法嗎？<br />
-              請依據課文回答下面的問題。（在□裡打「✓」）
-            </h2>
-            <div className="space-y-6 mt-6">
-              {lesson.quiz.map((q, i) => <QuizBlock key={i} qIdx={i} q={q.q} options={q.options} a={q.a} showAllAnswers={showAllAnswers} />)}
-            </div>
-          </section>
-
-          <section className="mb-14">
-            <h2 className="font-bold text-slate-800 text-xl mb-4">任務三、句型練習</h2>
-            <div className="space-y-8 mt-6">
-              {lesson.practices.map((p, i) => <PracticeBlock key={i} index={i} p={p} showAllAnswers={showAllAnswers} />)}
-            </div>
-            {lesson.sentences && (
-              <div className="space-y-6 mt-8">
-                {lesson.sentences.map((s, i) => <SentenceBlock key={i} word={s.word} ex={s.ex} showAllAnswers={showAllAnswers} />)}
-              </div>
-            )}
-          </section>
-
-          {lesson.task4 && (
-            <section className="mb-10">
-              <h2 className="font-bold text-slate-800 text-xl mb-4">挑戰任務、寫作引導，本課文本要點</h2>
-              <div className="mt-6">
-                <div className="mb-4 font-bold text-slate-800" style={{ marginLeft: '2em' }}>
-                  寫作主題：<span className="font-normal">{lesson.task4.theme}</span>
-                </div>
-                <div className="mb-6">
-                  <div className="font-bold text-slate-800 mb-2" style={{ marginLeft: '2em' }}>◎課文分析師</div>
-                  <div className="text-slate-700 leading-relaxed" style={{ marginLeft: '4em' }} dangerouslySetInnerHTML={{ __html: lesson.task4.analyst }} />
-                </div>
-                {lesson.task4.magic && (
-                  <div className="mb-6">
-                    <div className="font-bold text-slate-800 mb-2" style={{ marginLeft: '2em' }}>◎主題魔法書</div>
-                    <div className="text-slate-700 leading-relaxed" style={{ marginLeft: '4em' }} dangerouslySetInnerHTML={{ __html: lesson.task4.magic }} />
-                  </div>
-                )}
-                <div className="mb-6 space-y-6 mt-8">
-                  {lesson.task4.qa && <Task4QA q={lesson.task4.qa.q} a={lesson.task4.qa.a} showAllAnswers={showAllAnswers} />}
-                  {lesson.task4.mc && <Task4MC q={lesson.task4.mc.q} options={lesson.task4.mc.options} a={lesson.task4.mc.a} showAllAnswers={showAllAnswers} />}
-                </div>
-              </div>
-            </section>
-          )}
         </div>
       </div>
 
-      {/* 浮動工具列 */}
       <div className="no-print fixed bottom-8 right-8 bg-white/90 backdrop-blur-md p-3 rounded-full shadow-2xl border border-slate-200 flex flex-col space-y-3 z-50">
         <button onClick={() => setToolMode(toolMode === 'pen' ? 'none' : 'pen')} className={`p-4 rounded-full transition-all ${toolMode === 'pen' ? 'bg-yellow-300 text-yellow-800 shadow-inner' : 'bg-slate-100 hover:bg-slate-200 text-slate-600'}`} title="螢光筆畫記"><PenTool size={24} /></button>
         <button onClick={() => setToolMode(toolMode === 'eraser' ? 'none' : 'eraser')} className={`p-4 rounded-full transition-all ${toolMode === 'eraser' ? 'bg-pink-300 text-pink-800 shadow-inner' : 'bg-slate-100 hover:bg-slate-200 text-slate-600'}`} title="消除畫記"><Eraser size={24} /></button>
