@@ -69,7 +69,7 @@ const CheckboxItem = ({ item, globalShow }) => {
         {isShow && isCorrect ? '✓' : '□'}
       </span>
       <span className={isShow && isCorrect ? 'text-red-600 font-bold' : 'text-slate-700'}>
-        {parseText(item.text, globalShow, readOnly)}
+        {parseText(item.text, globalShow)}
       </span>
     </div>
   );
