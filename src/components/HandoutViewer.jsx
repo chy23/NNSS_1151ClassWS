@@ -274,16 +274,25 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
     // Assign group index to each item
     let groupIdx = -1;
     const itemsWithGroup = items.map((item, i) => {
-      if (isPrepSheet && !item.isCheckbox && !item.isTable && !item.isTimeline && !item.isImage) {
-        // Check if next item is a checkbox → this is a question line
+      if (!isPrepSheet || item.isTable || item.isTimeline || item.isImage) {
+        return item;
+      }
+      
+      const hasBlanks = item.text && item.text.includes('(*');
+      const isAnswer = item.isCheckbox || hasBlanks;
+      
+      if (isAnswer) {
+        return { ...item, _groupIdx: groupIdx };
+      } else {
+        // It's a text item without blanks. Check if subsequent items are answers.
         const nextItem = items[i + 1];
-        if (nextItem && nextItem.isCheckbox) {
+        const nextHasBlanks = nextItem?.text && nextItem.text.includes('(*');
+        const nextIsAnswer = nextItem?.isCheckbox || nextHasBlanks;
+        
+        if (nextIsAnswer) {
           groupIdx++;
           return { ...item, _isQuestionLine: true, _groupIdx: groupIdx };
         }
-      }
-      if (isPrepSheet && item.isCheckbox) {
-        return { ...item, _groupIdx: groupIdx };
       }
       return item;
     });
@@ -385,9 +394,21 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
             );
           }
 
+          const groupRevealed = item._groupIdx !== undefined ? (revealedGroups[item._groupIdx] ?? false) : false;
+          const isAnswerLine = item._groupIdx !== undefined && !item._isQuestionLine;
+
           return (
-            <div key={i} style={styleObj} className={containerClass}>
-              {parseText(item.text, showAllAnswers)}
+            <div 
+              key={i} 
+              style={styleObj} 
+              className={`${containerClass} ${isAnswerLine ? 'cursor-pointer hover:bg-slate-50 transition-colors rounded px-1 -mx-1' : ''}`}
+              onClick={(e) => {
+                if (isAnswerLine && !checkTool()) {
+                  toggleGroup(item._groupIdx);
+                }
+              }}
+            >
+              {parseText(item.text, showAllAnswers || groupRevealed)}
             </div>
           );
         })}
