@@ -3,13 +3,17 @@ import { PenTool, Eraser, Trash2, ZoomIn, ZoomOut, Menu } from 'lucide-react';
 
 const checkTool = () => document.body.classList.contains('cursor-eraser') || document.body.classList.contains('cursor-pen');
 
-const BlankWord = ({ text, globalShow, readOnly }) => {
+const BlankWord = ({ text, globalShow }) => {
   const [localState, setLocalState] = useState(null);
-  const isVisible = (readOnly || localState === null) ? globalShow : localState;
+
+  useEffect(() => {
+    setLocalState(null);
+  }, [globalShow]);
+
+  const isVisible = localState !== null ? localState : globalShow;
   
   const toggle = (e) => {
     if (checkTool()) return;
-    if (readOnly) return;
     e.stopPropagation();
     setLocalState(!isVisible);
   };
@@ -34,22 +38,27 @@ const BlankWord = ({ text, globalShow, readOnly }) => {
   );
 };
 
-const parseText = (text, globalShow, readOnly = false) => {
+const parseText = (text, globalShow) => {
   if (!text) return null;
   const parts = text.split(/\(\*(.*?)\*\)/g);
   return parts.map((part, i) => {
-    if (i % 2 === 1) return <BlankWord key={i} text={part} globalShow={globalShow} readOnly={readOnly} />;
+    if (i % 2 === 1) return <BlankWord key={i} text={part} globalShow={globalShow} />;
     return <span key={i} dangerouslySetInnerHTML={{ __html: part }} />;
   });
 };
 
-const CheckboxItem = ({ item, globalShow, readOnly }) => {
+const CheckboxItem = ({ item, globalShow }) => {
   const [localState, setLocalState] = useState(null);
-  const isShow = (readOnly || localState === null) ? globalShow : localState;
+
+  useEffect(() => {
+    setLocalState(null);
+  }, [globalShow]);
+
+  const isShow = localState !== null ? localState : globalShow;
   
   const toggle = (e) => {
     if (checkTool()) return;
-    if (readOnly) return;
+    e.stopPropagation();
     setLocalState(!isShow);
   };
 
@@ -338,7 +347,7 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
                   if (item._isQuestionLine) {
                     return (
                       <div key={i} style={styleObj} className="leading-relaxed my-1 select-none flex items-start">
-                        <span className="text-slate-800">{parseText(item.text, showAllAnswers, isPrepSheet)}</span>
+                        <span className="text-slate-800">{parseText(item.text, showAllAnswers || isRevealed)}</span>
                         <span className="ml-2 mt-1 text-slate-300 text-xs transition-colors">{isRevealed ? '▲' : '▼'}</span>
                       </div>
                     );
@@ -346,7 +355,7 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
                   if (item.isCheckbox) {
                     return (
                       <div key={i} style={styleObj}>
-                        <CheckboxItem item={item} globalShow={showAllAnswers || isRevealed} readOnly={isPrepSheet} />
+                        <CheckboxItem item={item} globalShow={showAllAnswers || isRevealed} />
                       </div>
                     );
                   }
@@ -354,7 +363,7 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
                   let containerClass = "leading-relaxed my-1";
                   return (
                     <div key={i} style={styleObj} className={containerClass}>
-                      {parseText(item.text, showAllAnswers || isRevealed, isPrepSheet)}
+                      {parseText(item.text, showAllAnswers || isRevealed)}
                     </div>
                   );
                 })}
@@ -406,7 +415,7 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
           if (item.isCheckbox) {
             return (
               <div key={i} style={{ marginLeft: `${item.indent * 2}em` }}>
-                <CheckboxItem item={item} globalShow={showAllAnswers} readOnly={false} />
+                <CheckboxItem item={item} globalShow={showAllAnswers} />
               </div>
             );
           }
