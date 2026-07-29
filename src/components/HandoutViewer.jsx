@@ -103,6 +103,13 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
   const [zoomLevel, setZoomLevel] = useState(1);
   const [isWidescreen, setIsWidescreen] = useState(false);
   const [activeTab, setActiveTab] = useState('summary');
+  const [revealedGroups, setRevealedGroups] = useState({});
+
+  useEffect(() => {
+    setRevealedGroups({});
+  }, [activeTab, lesson?.id]);
+  
+  const toggleGroup = (gIdx) => setRevealedGroups(prev => ({ ...prev, [gIdx]: !prev[gIdx] }));
 
   useEffect(() => {
     setShowAllAnswers(false);
@@ -257,8 +264,6 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
 
     // For prep sheets: group items by question (non-checkbox text items followed by checkboxes)
     // Each group has an index; we track which groups are revealed
-    const [revealedGroups, setRevealedGroups] = React.useState({});
-    const toggleGroup = (gIdx) => setRevealedGroups(prev => ({ ...prev, [gIdx]: !prev[gIdx] }));
 
     // Assign group index to each item
     let groupIdx = -1;
