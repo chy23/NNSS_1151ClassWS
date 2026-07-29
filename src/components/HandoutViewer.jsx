@@ -39,8 +39,8 @@ const BlankWord = ({ text, globalShow }) => {
 };
 
 const parseText = (text, globalShow) => {
-  if (!text) return null;
-  const parts = text.split(/\(\*(.*?)\*\)/g);
+  if (text === undefined || text === null || text === '') return null;
+  const parts = String(text).split(/\(\*(.*?)\*\)/g);
   return parts.map((part, i) => {
     if (i % 2 === 1) return <BlankWord key={i} text={part} globalShow={globalShow} />;
     return <span key={i} dangerouslySetInnerHTML={{ __html: part }} />;
