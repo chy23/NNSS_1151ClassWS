@@ -279,23 +279,26 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
     let inGroup = false;
 
     const itemsWithGroup = items.map((item, i) => {
-      if (!isPrepSheet || item.isTable || item.isTimeline || item.isImage) {
+      if (item.isTable || item.isTimeline || item.isImage) {
+        inGroup = false;
         return item;
       }
       
-      const isQuestionStart = typeof item.text === 'string' && item.text.match(/^(\d+\.|[一二三四五六七八九十]+、|[⒈-⒛])/);
+      const hasBlanks = typeof item.text === 'string' && item.text.includes('(*');
+      const isCheckbox = item.isCheckbox;
       
-      if (isQuestionStart) {
+      const isTitlePrefix = typeof item.text === 'string' && item.text.match(/^(\d+\.|[一二三四五六七八九十]+、|[⒈-⒛])/);
+      
+      const isGroupStart = isTitlePrefix || (hasBlanks && !isCheckbox);
+      
+      if (isGroupStart) {
         groupIdx++;
         inGroup = true;
         return { ...item, _isQuestionLine: true, _groupIdx: groupIdx };
       }
       
       if (inGroup) {
-        const hasBlanks = item.text && item.text.includes('(*');
-        const isAnswer = item.isCheckbox || hasBlanks;
-        
-        if (!isAnswer) {
+        if (!isCheckbox && !hasBlanks) {
           return { ...item, _isQuestionLine: true, _groupIdx: groupIdx };
         } else {
           return { ...item, _groupIdx: groupIdx };
@@ -350,10 +353,11 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
                   let styleObj = { marginLeft: `${item.indent * 2}em` };
                   
                   if (item._isQuestionLine) {
+                    const showArrow = activeTab !== 'summary';
                     return (
                       <div key={i} style={styleObj} className="leading-relaxed my-1 select-none flex items-start">
                         <span className="text-slate-800">{parseText(item.text, showAllAnswers || isRevealed)}</span>
-                        <span className="ml-2 mt-1 text-slate-300 text-xs transition-colors">{isRevealed ? '▲' : '▼'}</span>
+                        {showArrow && <span className="ml-2 mt-1 text-slate-300 text-xs transition-colors">{isRevealed ? '▲' : '▼'}</span>}
                       </div>
                     );
                   }
