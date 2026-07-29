@@ -26,7 +26,7 @@ const BlankWord = ({ text, globalShow }) => {
   }
   return (
     <span onClick={toggle}
-      className={`cursor-pointer px-2 mx-1 font-bold transition-colors select-none border-b-[3px] data-blankword ${isVisible ? 'text-red-600 border-red-300 bg-red-50' : 'text-transparent border-slate-400 bg-slate-100'}`}
+      className={`cursor-pointer inline-block text-center min-w-[4em] px-2 mx-1 font-bold transition-colors select-none border-b-[3px] data-blankword ${isVisible ? 'text-red-600 border-red-300 bg-red-50' : 'text-transparent border-slate-400 bg-slate-100'}`}
       data-text={text}>
       {text}
     </span>
@@ -60,6 +60,20 @@ const CheckboxItem = ({ item, globalShow }) => {
       <span className={isShow && isCorrect ? 'text-red-600 font-bold' : 'text-slate-700'}>
         {parseText(item.text, globalShow)}
       </span>
+    </div>
+  );
+};
+
+// A clickable question line that toggles all sibling checkbox answers
+const ClickableQuestion = ({ text, globalShow, onToggle, isRevealed }) => {
+  return (
+    <div
+      className="leading-relaxed my-1 cursor-pointer select-none hover:bg-slate-50 rounded px-1 -mx-1 transition-colors group"
+      onClick={(e) => { if (checkTool()) return; onToggle(); }}
+      title="點擊顯示/隱藏該題答案"
+    >
+      <span className="text-slate-800">{parseText(text, globalShow)}</span>
+      <span className="ml-2 text-slate-300 text-xs group-hover:text-slate-400 transition-colors">{isRevealed ? '▲' : '▼'}</span>
     </div>
   );
 };
@@ -231,7 +245,7 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
     const link = document.createElement('a');
     link.href = url;
     const lessonNumber = lesson.id.replace('lesson-', '').padStart(2, '0');
-    let tabName = activeTab === 'summary' ? '課堂重點整理' : activeTab;
+    let tabName = activeTab === 'summary' ? '課堂重點整理' : activeTab === 'practice' ? '單元練習' : activeTab;
     link.download = `${lessonNumber}_${lesson.lessonNum}_${lesson.lessonName}_${tabName}_${mode === 'teacher' ? '教用版' : '學用版'}.doc`;
     document.body.appendChild(link); link.click(); document.body.removeChild(link);
   };
@@ -242,16 +256,41 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
 
   const renderContent = () => {
     let items = [];
+    const isPrepSheet = activeTab !== 'summary' && activeTab !== 'practice';
     if (activeTab === 'summary') {
       items = lesson.summary || [];
+    } else if (activeTab === 'practice') {
+      items = lesson.practice || [];
     } else {
       const sheet = lesson.prepSheets?.find(s => s.title === activeTab);
       if (sheet) items = sheet.content || [];
     }
 
+    // For prep sheets: group items by question (non-checkbox text items followed by checkboxes)
+    // Each group has an index; we track which groups are revealed
+    const [revealedGroups, setRevealedGroups] = React.useState({});
+    const toggleGroup = (gIdx) => setRevealedGroups(prev => ({ ...prev, [gIdx]: !prev[gIdx] }));
+
+    // Assign group index to each item
+    let groupIdx = -1;
+    const itemsWithGroup = items.map((item, i) => {
+      if (isPrepSheet && !item.isCheckbox && !item.isTable && !item.isTimeline && !item.isImage) {
+        // Check if next item is a checkbox → this is a question line
+        const nextItem = items[i + 1];
+        if (nextItem && nextItem.isCheckbox) {
+          groupIdx++;
+          return { ...item, _isQuestionLine: true, _groupIdx: groupIdx };
+        }
+      }
+      if (isPrepSheet && item.isCheckbox) {
+        return { ...item, _groupIdx: groupIdx };
+      }
+      return item;
+    });
+
     return (
       <div className="space-y-2 mt-6">
-        {items.map((item, i) => {
+        {itemsWithGroup.map((item, i) => {
           if (item.isTable) {
             return (
               <div key={i} style={{ marginLeft: `${item.indent * 2}em` }}>
@@ -259,15 +298,95 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
               </div>
             );
           }
-          if (item.isCheckbox) {
+          if (item.isTimeline) {
             return (
-              <div key={i} style={{ marginLeft: `${item.indent * 2}em` }}>
-                <CheckboxItem item={item} globalShow={showAllAnswers} />
+              <div key={i} style={{ marginLeft: `${item.indent * 2}em` }} className="my-6">
+                <div className="relative border-l-2 border-slate-300 ml-4 py-2">
+                  {item.events.map((ev, evIdx) => (
+                    <div key={evIdx} className="mb-6 ml-6 relative">
+                      <div className="absolute w-4 h-4 bg-blue-500 rounded-full -left-[1.95rem] top-1.5 border-4 border-white shadow-sm"></div>
+                      <div className="flex flex-col">
+                        <span className="font-bold text-blue-700">{parseText(ev.year, showAllAnswers)}</span>
+                        <span className="font-bold text-slate-800 text-lg">{parseText(ev.title, showAllAnswers)}</span>
+                        {ev.details && ev.details.length > 0 && (
+                          <div className="text-slate-600 mt-1 space-y-1">
+                            {ev.details.map((detail, dIdx) => (
+                              <div key={dIdx}>→ {parseText(detail, showAllAnswers)}</div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             );
           }
+          if (item.isImage) {
+            return (
+              <div key={i} style={{ marginLeft: `${item.indent * 2}em` }} className="my-6 text-center">
+                <img src={item.src} alt="重點圖表" className="max-w-full h-auto rounded-lg shadow-sm border border-slate-200 inline-block" />
+              </div>
+            );
+          }
+          if (item.isCheckbox) {
+            const groupRevealed = item._groupIdx !== undefined ? (revealedGroups[item._groupIdx] ?? false) : false;
+            return (
+              <div key={i} style={{ marginLeft: `${item.indent * 2}em` }}>
+                <CheckboxItem item={item} globalShow={showAllAnswers || groupRevealed} />
+              </div>
+            );
+          }
+          if (item._isQuestionLine) {
+            const isRevealed = revealedGroups[item._groupIdx] ?? false;
+            return (
+              <div key={i} style={{ marginLeft: `${item.indent * 2}em` }}>
+                <ClickableQuestion
+                  text={item.text}
+                  globalShow={showAllAnswers}
+                  onToggle={() => toggleGroup(item._groupIdx)}
+                  isRevealed={isRevealed}
+                />
+              </div>
+            );
+          }
+          let containerClass = "leading-relaxed my-1";
+          let styleObj = { marginLeft: `${item.indent * 2}em` };
+          let isTitle = false;
+          
+          if (activeTab === 'summary') {
+            if (item.indent === 1) {
+              containerClass = "leading-relaxed mt-8 mb-4 bg-slate-800 text-white font-bold px-5 py-2.5 rounded-lg shadow-md inline-block text-lg";
+              styleObj = { marginLeft: 0 }; // Remove margin for main title to make it prominent
+              isTitle = true;
+            } else if (item.indent === 2) {
+              containerClass = "leading-relaxed mt-5 mb-2 bg-slate-200 text-slate-800 font-bold px-4 py-1.5 rounded-md inline-block border border-slate-300";
+              styleObj = { marginLeft: '1em' };
+              isTitle = true;
+            }
+          } else if (activeTab === 'practice') {
+            if (item.text && typeof item.text === 'string' && item.text.match(/^[一二三四五六七八九十]、/)) {
+              containerClass = "leading-relaxed mt-8 mb-4 bg-teal-100 text-teal-900 font-bold px-4 py-2 rounded-lg shadow-sm inline-block text-lg border border-teal-200";
+              styleObj = { marginLeft: 0 };
+              isTitle = true;
+            } else {
+              let effectiveIndent = item.indent === 1 ? 1.5 : item.indent;
+              styleObj = { marginLeft: `${effectiveIndent * 2}em` };
+            }
+          }
+
+          if (isTitle) {
+            return (
+              <div key={i} className="w-full">
+                <div style={styleObj} className={containerClass}>
+                  {parseText(item.text, showAllAnswers)}
+                </div>
+              </div>
+            );
+          }
+
           return (
-            <div key={i} style={{ marginLeft: `${item.indent * 2}em` }} className="leading-relaxed my-1">
+            <div key={i} style={styleObj} className={containerClass}>
               {parseText(item.text, showAllAnswers)}
             </div>
           );
@@ -285,9 +404,14 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
               <Menu size={20} />
             </button>
           )}
-          講義控制台
+          社會學習單
         </div>
         <div className="flex gap-3 flex-wrap justify-center items-center">
+          <div className="text-xs leading-tight text-right mr-2 border border-orange-200 bg-orange-50 text-orange-800 px-3 py-1.5 rounded-md hidden xl:block select-none pointer-events-none shadow-sm">
+            <p>學習單資料取自「南一出版社」</p>
+            <p>網站內容僅限用於孩子學習使用</p>
+            <p className="font-bold mt-0.5 text-orange-600">切勿用於商業行為</p>
+          </div>
           <div className="flex items-center gap-1 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
             <button onClick={() => setZoomLevel(z => Math.max(0.5, parseFloat((z - 0.1).toFixed(1))))} className="p-1 hover:bg-white rounded text-slate-600" title="縮小"><ZoomOut size={18} /></button>
             <span className="text-sm font-bold w-12 text-center text-slate-700">{Math.round(zoomLevel * 100)}%</span>
@@ -333,6 +457,12 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
           >
             課堂重點整理
           </button>
+          <button
+            onClick={() => setActiveTab('practice')}
+            className={`px-4 py-2 font-bold transition-colors whitespace-nowrap ${activeTab === 'practice' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+          >
+            單元練習
+          </button>
         </div>
       </div>
 
@@ -350,7 +480,7 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
             <span>115學年六上社會學習講義南一版</span>
             <span>
               {lesson.lessonNum} {lesson.lessonName}
-              {activeTab !== 'summary' ? ` - 預習單 ${activeTab}` : ' - 課堂重點整理'}
+              {activeTab === 'summary' ? ' - 課堂重點整理' : activeTab === 'practice' ? ' - 單元練習' : ` - 預習單 ${activeTab}`}
             </span>
           </h1>
 
