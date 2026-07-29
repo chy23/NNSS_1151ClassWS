@@ -9,8 +9,8 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "chmod +x deploy_all.sh",
+    "deploy": "./deploy_all.sh"
   },
   "dependencies": {
     "clsx": "^2.1.1",
