@@ -3,12 +3,13 @@ import { PenTool, Eraser, Trash2, ZoomIn, ZoomOut, Menu } from 'lucide-react';
 
 const checkTool = () => document.body.classList.contains('cursor-eraser') || document.body.classList.contains('cursor-pen');
 
-const BlankWord = ({ text, globalShow }) => {
+const BlankWord = ({ text, globalShow, readOnly }) => {
   const [localState, setLocalState] = useState(null);
-  const isVisible = localState !== null ? localState : globalShow;
+  const isVisible = (readOnly || localState === null) ? globalShow : localState;
   
   const toggle = (e) => {
     if (checkTool()) return;
+    if (readOnly) return;
     e.stopPropagation();
     setLocalState(!isVisible);
   };
@@ -33,21 +34,22 @@ const BlankWord = ({ text, globalShow }) => {
   );
 };
 
-const parseText = (text, globalShow) => {
+const parseText = (text, globalShow, readOnly = false) => {
   if (!text) return null;
   const parts = text.split(/\(\*(.*?)\*\)/g);
   return parts.map((part, i) => {
-    if (i % 2 === 1) return <BlankWord key={i} text={part} globalShow={globalShow} />;
+    if (i % 2 === 1) return <BlankWord key={i} text={part} globalShow={globalShow} readOnly={readOnly} />;
     return <span key={i} dangerouslySetInnerHTML={{ __html: part }} />;
   });
 };
 
-const CheckboxItem = ({ item, globalShow }) => {
+const CheckboxItem = ({ item, globalShow, readOnly }) => {
   const [localState, setLocalState] = useState(null);
-  const isShow = localState !== null ? localState : globalShow;
+  const isShow = (readOnly || localState === null) ? globalShow : localState;
   
   const toggle = (e) => {
     if (checkTool()) return;
+    if (readOnly) return;
     setLocalState(!isShow);
   };
 
@@ -58,25 +60,12 @@ const CheckboxItem = ({ item, globalShow }) => {
         {isShow && isCorrect ? '✓' : '□'}
       </span>
       <span className={isShow && isCorrect ? 'text-red-600 font-bold' : 'text-slate-700'}>
-        {parseText(item.text, globalShow)}
+        {parseText(item.text, globalShow, readOnly)}
       </span>
     </div>
   );
 };
 
-// A clickable question line that toggles all sibling checkbox answers
-const ClickableQuestion = ({ text, globalShow, onToggle, isRevealed }) => {
-  return (
-    <div
-      className="leading-relaxed my-1 cursor-pointer select-none hover:bg-slate-50 rounded px-1 -mx-1 transition-colors group"
-      onClick={(e) => { if (checkTool()) return; onToggle(); }}
-      title="點擊顯示/隱藏該題答案"
-    >
-      <span className="text-slate-800">{parseText(text, globalShow)}</span>
-      <span className="ml-2 text-slate-300 text-xs group-hover:text-slate-400 transition-colors">{isRevealed ? '▲' : '▼'}</span>
-    </div>
-  );
-};
 
 const TableContent = ({ headers, rows, globalShow }) => {
   return (
@@ -297,9 +286,80 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
       return item;
     });
 
+    const blocks = [];
+    let currentGroupIdx = null;
+    let currentBlock = [];
+
+    itemsWithGroup.forEach((item) => {
+      if (item._groupIdx !== undefined) {
+        if (currentGroupIdx === item._groupIdx) {
+          currentBlock.push(item);
+        } else {
+          if (currentBlock.length > 0) blocks.push(currentBlock);
+          currentGroupIdx = item._groupIdx;
+          currentBlock = [item];
+        }
+      } else {
+        if (currentBlock.length > 0) {
+          blocks.push(currentBlock);
+          currentBlock = [];
+          currentGroupIdx = null;
+        }
+        blocks.push([item]);
+      }
+    });
+    if (currentBlock.length > 0) blocks.push(currentBlock);
+
     return (
       <div className="space-y-2 mt-6">
-        {itemsWithGroup.map((item, i) => {
+        {blocks.map((block, bIdx) => {
+          const firstItem = block[0];
+          const isGroup = firstItem._groupIdx !== undefined;
+
+          if (isGroup) {
+            const groupIdx = firstItem._groupIdx;
+            const isRevealed = revealedGroups[groupIdx] ?? false;
+            
+            return (
+              <div 
+                key={bIdx} 
+                className="group cursor-pointer hover:bg-slate-50 transition-colors rounded p-2 -mx-2 mb-2"
+                onClick={() => { if (!checkTool()) toggleGroup(groupIdx); }}
+                title="點擊顯示/隱藏該題答案"
+              >
+                {block.map((item, i) => {
+                  let styleObj = { marginLeft: `${item.indent * 2}em` };
+                  
+                  if (item._isQuestionLine) {
+                    return (
+                      <div key={i} style={styleObj} className="leading-relaxed my-1 select-none flex items-start">
+                        <span className="text-slate-800">{parseText(item.text, showAllAnswers, isPrepSheet)}</span>
+                        <span className="ml-2 mt-1 text-slate-300 text-xs transition-colors">{isRevealed ? '▲' : '▼'}</span>
+                      </div>
+                    );
+                  }
+                  if (item.isCheckbox) {
+                    return (
+                      <div key={i} style={styleObj}>
+                        <CheckboxItem item={item} globalShow={showAllAnswers || isRevealed} readOnly={isPrepSheet} />
+                      </div>
+                    );
+                  }
+                  
+                  let containerClass = "leading-relaxed my-1";
+                  return (
+                    <div key={i} style={styleObj} className={containerClass}>
+                      {parseText(item.text, showAllAnswers || isRevealed, isPrepSheet)}
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          }
+
+          const item = firstItem;
+          const i = bIdx;
+
           if (item.isTable) {
             return (
               <div key={i} style={{ marginLeft: `${item.indent * 2}em` }}>
@@ -315,12 +375,12 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
                     <div key={evIdx} className="mb-6 ml-6 relative">
                       <div className="absolute w-4 h-4 bg-blue-500 rounded-full -left-[1.95rem] top-1.5 border-4 border-white shadow-sm"></div>
                       <div className="flex flex-col">
-                        <span className="font-bold text-blue-700">{parseText(ev.year, showAllAnswers)}</span>
-                        <span className="font-bold text-slate-800 text-lg">{parseText(ev.title, showAllAnswers)}</span>
+                        <span className="font-bold text-blue-700">{parseText(ev.year, showAllAnswers, false)}</span>
+                        <span className="font-bold text-slate-800 text-lg">{parseText(ev.title, showAllAnswers, false)}</span>
                         {ev.details && ev.details.length > 0 && (
                           <div className="text-slate-600 mt-1 space-y-1">
                             {ev.details.map((detail, dIdx) => (
-                              <div key={dIdx}>→ {parseText(detail, showAllAnswers)}</div>
+                              <div key={dIdx}>→ {parseText(detail, showAllAnswers, false)}</div>
                             ))}
                           </div>
                         )}
@@ -339,26 +399,13 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
             );
           }
           if (item.isCheckbox) {
-            const groupRevealed = item._groupIdx !== undefined ? (revealedGroups[item._groupIdx] ?? false) : false;
             return (
               <div key={i} style={{ marginLeft: `${item.indent * 2}em` }}>
-                <CheckboxItem item={item} globalShow={showAllAnswers || groupRevealed} />
+                <CheckboxItem item={item} globalShow={showAllAnswers} readOnly={false} />
               </div>
             );
           }
-          if (item._isQuestionLine) {
-            const isRevealed = revealedGroups[item._groupIdx] ?? false;
-            return (
-              <div key={i} style={{ marginLeft: `${item.indent * 2}em` }}>
-                <ClickableQuestion
-                  text={item.text}
-                  globalShow={showAllAnswers}
-                  onToggle={() => toggleGroup(item._groupIdx)}
-                  isRevealed={isRevealed}
-                />
-              </div>
-            );
-          }
+          
           let containerClass = "leading-relaxed my-1";
           let styleObj = { marginLeft: `${item.indent * 2}em` };
           let isTitle = false;
@@ -366,7 +413,7 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
           if (activeTab === 'summary') {
             if (item.indent === 1) {
               containerClass = "leading-relaxed mt-8 mb-4 bg-slate-800 text-white font-bold px-5 py-2.5 rounded-lg shadow-md inline-block text-lg";
-              styleObj = { marginLeft: 0 }; // Remove margin for main title to make it prominent
+              styleObj = { marginLeft: 0 };
               isTitle = true;
             } else if (item.indent === 2) {
               containerClass = "leading-relaxed mt-5 mb-2 bg-slate-200 text-slate-800 font-bold px-4 py-1.5 rounded-md inline-block border border-slate-300";
@@ -388,27 +435,15 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
             return (
               <div key={i} className="w-full">
                 <div style={styleObj} className={containerClass}>
-                  {parseText(item.text, showAllAnswers)}
+                  {parseText(item.text, showAllAnswers, false)}
                 </div>
               </div>
             );
           }
 
-          const groupRevealed = item._groupIdx !== undefined ? (revealedGroups[item._groupIdx] ?? false) : false;
-          const isAnswerLine = item._groupIdx !== undefined && !item._isQuestionLine;
-
           return (
-            <div 
-              key={i} 
-              style={styleObj} 
-              className={`${containerClass} ${isAnswerLine ? 'cursor-pointer hover:bg-slate-50 transition-colors rounded px-1 -mx-1' : ''}`}
-              onClick={(e) => {
-                if (isAnswerLine && !checkTool()) {
-                  toggleGroup(item._groupIdx);
-                }
-              }}
-            >
-              {parseText(item.text, showAllAnswers || groupRevealed)}
+            <div key={i} style={styleObj} className={containerClass}>
+              {parseText(item.text, showAllAnswers, false)}
             </div>
           );
         })}
