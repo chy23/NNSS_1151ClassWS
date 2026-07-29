@@ -276,27 +276,32 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
 
     // Assign group index to each item
     let groupIdx = -1;
+    let inGroup = false;
+
     const itemsWithGroup = items.map((item, i) => {
       if (!isPrepSheet || item.isTable || item.isTimeline || item.isImage) {
         return item;
       }
       
-      const hasBlanks = item.text && item.text.includes('(*');
-      const isAnswer = item.isCheckbox || hasBlanks;
+      const isQuestionStart = typeof item.text === 'string' && item.text.match(/^(\d+\.|[一二三四五六七八九十]+、|[⒈-⒛])/);
       
-      if (isAnswer) {
-        return { ...item, _groupIdx: groupIdx };
-      } else {
-        // It's a text item without blanks. Check if subsequent items are answers.
-        const nextItem = items[i + 1];
-        const nextHasBlanks = nextItem?.text && nextItem.text.includes('(*');
-        const nextIsAnswer = nextItem?.isCheckbox || nextHasBlanks;
+      if (isQuestionStart) {
+        groupIdx++;
+        inGroup = true;
+        return { ...item, _isQuestionLine: true, _groupIdx: groupIdx };
+      }
+      
+      if (inGroup) {
+        const hasBlanks = item.text && item.text.includes('(*');
+        const isAnswer = item.isCheckbox || hasBlanks;
         
-        if (nextIsAnswer) {
-          groupIdx++;
+        if (!isAnswer) {
           return { ...item, _isQuestionLine: true, _groupIdx: groupIdx };
+        } else {
+          return { ...item, _groupIdx: groupIdx };
         }
       }
+      
       return item;
     });
 
