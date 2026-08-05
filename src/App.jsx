@@ -18,10 +18,10 @@ function App() {
       </div>
 
       {/* 固定浮水印 - 不跟著捲動，永遠固定在畫面角落 */}
-      <div className="fixed top-6 right-2 z-[100] pointer-events-none select-none no-print text-gray-500/25 text-[18pt] font-medium tracking-widest" style={{ writingMode: 'vertical-rl' }}>
+      <div className="fixed top-24 right-8 z-[100] pointer-events-none select-none no-print text-gray-500/25 text-[18pt] font-medium tracking-wide">
         網站建立自楊家驊老師
       </div>
-      <div className="fixed bottom-6 right-2 z-[100] pointer-events-none select-none no-print text-gray-500/25 text-[18pt] font-medium tracking-widest" style={{ writingMode: 'vertical-rl' }}>
+      <div className="fixed bottom-4 right-28 z-[100] pointer-events-none select-none no-print text-gray-500/25 text-[18pt] font-medium tracking-wide">
         網站建立自楊家驊老師
       </div>
 
