@@ -18,6 +18,7 @@ run_branch() {
   # Patch the extend line temporarily
   sed -i '' "${TAIL_LINE}s/.*/lessons_data.extend($UNITS)/" "$GENERATE"
 
+  rm -f src/data/lesson-*.js
   python3 "$GENERATE"
   npm run build
 

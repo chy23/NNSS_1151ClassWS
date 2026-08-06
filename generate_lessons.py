@@ -838,6 +838,10 @@ unit4 = {
 
 lessons_data.extend([unit1, unit2, unit3, unit4])
 
-out_str = "export const lessons = " + json.dumps(lessons_data, ensure_ascii=False, indent=2) + ";\n"
-with codecs.open('/Users/chiahua/.gemini/antigravity/scratch/NNSS_1151ClassWS/src/data/lessons.js', 'w', 'utf-8') as f:
-    f.write(out_str)
+lessons_meta = [{"id": l["id"], "lessonNum": l["lessonNum"], "lessonName": l["lessonName"]} for l in lessons_data]
+with codecs.open('/Users/chiahua/.gemini/antigravity/scratch/NNSS_1151ClassWS/src/data/lessons-meta.js', 'w', 'utf-8') as f:
+    f.write("export const lessonsMeta = " + json.dumps(lessons_meta, ensure_ascii=False, indent=2) + ";\n")
+
+for l in lessons_data:
+    with codecs.open(f'/Users/chiahua/.gemini/antigravity/scratch/NNSS_1151ClassWS/src/data/{l["id"]}.js', 'w', 'utf-8') as f:
+        f.write("export default " + json.dumps(l, ensure_ascii=False, indent=2) + ";\n")
