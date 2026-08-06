@@ -836,7 +836,7 @@ unit4 = {
     ]
 }
 
-lessons_data.extend([unit1, unit2, unit3, unit4])
+lessons_data.extend([unit1, unit2])
 
 lessons_meta = [{"id": l["id"], "lessonNum": l["lessonNum"], "lessonName": l["lessonName"]} for l in lessons_data]
 with codecs.open('/Users/chiahua/.gemini/antigravity/scratch/NNSS_1151ClassWS/src/data/lessons-meta.js', 'w', 'utf-8') as f:
