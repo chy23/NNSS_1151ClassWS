@@ -13,10 +13,5 @@ export const lessonsMeta = [
     "id": "lesson-3",
     "lessonNum": "第三單元",
     "lessonName": "戰後臺灣的經濟與城鄉發展"
-  },
-  {
-    "id": "lesson-4",
-    "lessonNum": "第四單元",
-    "lessonName": "臺灣進行式"
   }
 ];
