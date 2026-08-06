@@ -31,7 +31,7 @@ const BlankWord = ({ text, globalShow }) => {
   }
   return (
     <span onClick={toggle}
-      className={`cursor-pointer inline-block text-center min-w-[4em] px-2 mx-1 font-bold transition-colors select-none border-b-[3px] data-blankword ${isVisible ? 'text-red-600 border-red-300 bg-red-50' : 'text-transparent border-slate-400 bg-slate-100'}`}
+      className={`cursor-pointer inline-block text-center min-w-[4em] px-2 mx-1 font-bold transition-colors select-none border-b-[3px] data-blankword ${isVisible ? 'text-red-600 border-red-300 bg-red-50 dark:bg-red-900/30 dark:border-red-800/50' : 'text-transparent border-slate-400 dark:border-slate-600 bg-slate-100 dark:bg-slate-700'}`}
       data-text={text}>
       {text}
     </span>
@@ -64,11 +64,11 @@ const CheckboxItem = ({ item, globalShow }) => {
 
   const isCorrect = item.isAnswer;
   return (
-    <div className="flex items-start data-quiz-opt cursor-pointer group select-none my-1" onClick={toggle} data-correct={isCorrect}>
-      <span className={`mr-2 font-bold leading-none ${isShow && isCorrect ? 'text-red-600' : 'text-slate-400'}`}>
+    <div className="flex items-start data-quiz-opt cursor-pointer group select-none my-1 transition-colors" onClick={toggle} data-correct={isCorrect}>
+      <span className={`mr-2 font-bold leading-none ${isShow && isCorrect ? 'text-red-600' : 'text-slate-400 dark:text-slate-500'}`}>
         {isShow && isCorrect ? '✓' : '□'}
       </span>
-      <span className={isShow && isCorrect ? 'text-red-600 font-bold' : 'text-slate-700'}>
+      <span className={isShow && isCorrect ? 'text-red-600 font-bold' : 'text-slate-700 dark:text-slate-300'}>
         {parseText(item.text, globalShow)}
       </span>
     </div>
@@ -82,7 +82,7 @@ const TableContent = ({ headers, rows, globalShow }) => {
       <thead>
         <tr>
           {headers.map((h, i) => (
-            <th key={i} className="border border-slate-400 p-2 bg-slate-100 font-bold text-center">
+            <th key={i} className="border border-slate-400 dark:border-slate-600 p-2 bg-slate-100 dark:bg-slate-700/50 font-bold text-center transition-colors">
               {parseText(h, globalShow)}
             </th>
           ))}
@@ -92,7 +92,7 @@ const TableContent = ({ headers, rows, globalShow }) => {
         {rows.map((row, rIdx) => (
           <tr key={rIdx}>
             {row.map((cell, cIdx) => (
-              <td key={cIdx} className="border border-slate-400 p-2">
+              <td key={cIdx} className="border border-slate-400 dark:border-slate-600 p-2 transition-colors">
                 {parseText(cell, globalShow)}
               </td>
             ))}
@@ -169,7 +169,7 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
   }, [toolMode]);
 
   useEffect(() => {
-    document.body.className = `font-sans antialiased bg-slate-50 text-slate-800 ${toolMode === 'pen' ? 'cursor-pen' : toolMode === 'eraser' ? 'cursor-eraser' : ''}`;
+    document.body.className = `font-sans antialiased bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 transition-colors duration-300 ${toolMode === 'pen' ? 'cursor-pen' : toolMode === 'eraser' ? 'cursor-eraser' : ''}`;
   }, [toolMode]);
 
   const clearAllHighlight = () => {
@@ -345,7 +345,7 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
             return (
               <div 
                 key={bIdx} 
-                className="group cursor-pointer hover:bg-slate-50 transition-colors rounded p-2 -mx-2 mb-2"
+                className="group cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors rounded p-2 -mx-2 mb-2"
                 onClick={() => { if (!checkTool()) toggleGroup(groupIdx); }}
                 title="點擊顯示/隱藏該題答案"
               >
@@ -355,9 +355,9 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
                   if (item._isQuestionLine) {
                     const showArrow = activeTab !== 'summary';
                     return (
-                      <div key={i} style={styleObj} className="leading-relaxed my-1 select-none flex items-start">
-                        <span className="text-slate-800">{parseText(item.text, showAllAnswers || isRevealed)}</span>
-                        {showArrow && <span className="ml-2 mt-1 text-slate-300 text-xs transition-colors">{isRevealed ? '▲' : '▼'}</span>}
+                      <div key={i} style={styleObj} className="leading-relaxed my-1 select-none flex items-start transition-colors">
+                        <span className="text-slate-800 dark:text-slate-100">{parseText(item.text, showAllAnswers || isRevealed)}</span>
+                        {showArrow && <span className="ml-2 mt-1 text-slate-300 dark:text-slate-600 text-xs transition-colors">{isRevealed ? '▲' : '▼'}</span>}
                       </div>
                     );
                   }
@@ -393,13 +393,13 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
           if (item.isTimeline) {
             return (
               <div key={i} style={{ marginLeft: `${item.indent * 2}em` }} className="my-6">
-                <div className="relative border-l-2 border-slate-300 ml-4 py-2">
+                <div className="relative border-l-2 border-slate-300 dark:border-slate-600 ml-4 py-2 transition-colors">
                   {item.events.map((ev, evIdx) => (
                     <div key={evIdx} className="mb-6 ml-6 relative">
-                      <div className="absolute w-4 h-4 bg-blue-500 rounded-full -left-[1.95rem] top-1.5 border-4 border-white shadow-sm"></div>
+                      <div className="absolute w-4 h-4 bg-blue-500 rounded-full -left-[1.95rem] top-1.5 border-4 border-white dark:border-slate-800 shadow-sm transition-colors"></div>
                       <div className="flex flex-col">
-                        <span className="font-bold text-blue-700">{parseText(ev.year, showAllAnswers, false)}</span>
-                        <span className="font-bold text-slate-800 text-lg">{parseText(ev.title, showAllAnswers, false)}</span>
+                        <span className="font-bold text-blue-700 dark:text-blue-400">{parseText(ev.year, showAllAnswers, false)}</span>
+                        <span className="font-bold text-slate-800 dark:text-slate-100 text-lg">{parseText(ev.title, showAllAnswers, false)}</span>
                         {ev.details && ev.details.length > 0 && (
                           <div className="text-slate-600 mt-1 space-y-1">
                             {ev.details.map((detail, dIdx) => (
@@ -435,17 +435,17 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
           
           if (activeTab === 'summary') {
             if (item.indent === 1) {
-              containerClass = "leading-relaxed mt-8 mb-4 bg-slate-800 text-white font-bold px-5 py-2.5 rounded-lg shadow-md inline-block text-lg";
+              containerClass = "leading-relaxed mt-8 mb-4 bg-slate-800 dark:bg-slate-700 text-white font-bold px-5 py-2.5 rounded-lg shadow-md inline-block text-lg transition-colors";
               styleObj = { marginLeft: 0 };
               isTitle = true;
             } else if (item.indent === 2) {
-              containerClass = "leading-relaxed mt-5 mb-2 bg-slate-200 text-slate-800 font-bold px-4 py-1.5 rounded-md inline-block border border-slate-300";
+              containerClass = "leading-relaxed mt-5 mb-2 bg-slate-200 dark:bg-slate-700/50 text-slate-800 dark:text-slate-200 font-bold px-4 py-1.5 rounded-md inline-block border border-slate-300 dark:border-slate-600 transition-colors";
               styleObj = { marginLeft: '1em' };
               isTitle = true;
             }
           } else if (activeTab === 'practice') {
             if (item.text && typeof item.text === 'string' && item.text.match(/^[一二三四五六七八九十]、/)) {
-              containerClass = "leading-relaxed mt-8 mb-4 bg-teal-100 text-teal-900 font-bold px-4 py-2 rounded-lg shadow-sm inline-block text-lg border border-teal-200";
+              containerClass = "leading-relaxed mt-8 mb-4 bg-teal-100 dark:bg-teal-900/30 text-teal-900 dark:text-teal-100 font-bold px-4 py-2 rounded-lg shadow-sm inline-block text-lg border border-teal-200 dark:border-teal-800/50 transition-colors";
               styleObj = { marginLeft: 0 };
               isTitle = true;
             } else {
@@ -476,69 +476,69 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
 
   return (
     <div className="flex flex-col w-full h-full pb-20">
-      <div className="no-print bg-white/80 backdrop-blur-md border-b border-slate-200 p-4 sticky top-0 z-40 flex flex-col md:flex-row justify-between items-center shadow-sm gap-4 shrink-0">
-        <div className="font-bold text-xl text-blue-900 flex items-center gap-3">
+      <div className="no-print bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 p-4 sticky top-0 z-40 flex flex-col md:flex-row justify-between items-center shadow-sm gap-4 shrink-0 transition-colors duration-300">
+        <div className="font-bold text-xl text-blue-900 dark:text-blue-100 flex items-center gap-3 transition-colors">
           {!isSidebarOpen && (
-            <button onClick={() => setIsSidebarOpen(true)} className="p-2 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg transition-colors" title="開啟課程列表">
+            <button onClick={() => setIsSidebarOpen(true)} className="p-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-lg transition-colors" title="開啟課程列表">
               <Menu size={20} />
             </button>
           )}
           社會學習單
         </div>
         <div className="flex gap-3 flex-wrap justify-center items-center">
-          <div className="text-xs leading-tight text-right mr-2 border border-orange-200 bg-orange-50 text-orange-800 px-3 py-1.5 rounded-md hidden xl:block select-none pointer-events-none shadow-sm">
+          <div className="text-xs leading-tight text-right mr-2 border border-orange-200 dark:border-orange-800/50 bg-orange-50 dark:bg-orange-900/20 text-orange-800 dark:text-orange-300 px-3 py-1.5 rounded-md hidden xl:block select-none pointer-events-none shadow-sm transition-colors">
             <p>學習單資料取自「南一出版社」</p>
             <p>網站內容僅限用於孩子學習使用</p>
-            <p className="font-bold mt-0.5 text-orange-600">切勿用於商業行為</p>
+            <p className="font-bold mt-0.5 text-orange-600 dark:text-orange-400">切勿用於商業行為</p>
           </div>
-          <div className="flex items-center gap-1 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
-            <button onClick={() => setZoomLevel(z => Math.max(0.5, parseFloat((z - 0.1).toFixed(1))))} className="p-1 hover:bg-white rounded text-slate-600" title="縮小"><ZoomOut size={18} /></button>
-            <span className="text-sm font-bold w-12 text-center text-slate-700">{Math.round(zoomLevel * 100)}%</span>
-            <button onClick={() => setZoomLevel(z => Math.min(2, parseFloat((z + 0.1).toFixed(1))))} className="p-1 hover:bg-white rounded text-slate-600" title="放大"><ZoomIn size={18} /></button>
+          <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 transition-colors">
+            <button onClick={() => setZoomLevel(z => Math.max(0.5, parseFloat((z - 0.1).toFixed(1))))} className="p-1 hover:bg-white dark:hover:bg-slate-700 rounded text-slate-600 dark:text-slate-300" title="縮小"><ZoomOut size={18} /></button>
+            <span className="text-sm font-bold w-12 text-center text-slate-700 dark:text-slate-200">{Math.round(zoomLevel * 100)}%</span>
+            <button onClick={() => setZoomLevel(z => Math.min(2, parseFloat((z + 0.1).toFixed(1))))} className="p-1 hover:bg-white dark:hover:bg-slate-700 rounded text-slate-600 dark:text-slate-300" title="放大"><ZoomIn size={18} /></button>
           </div>
-          <button onClick={() => setIsWidescreen(!isWidescreen)} className={`px-3 py-1.5 rounded-lg text-sm font-bold border transition-colors ${isWidescreen ? 'bg-indigo-100 text-indigo-700 border-indigo-200' : 'bg-slate-100 text-slate-600 border-slate-200'}`}>
+          <button onClick={() => setIsWidescreen(!isWidescreen)} className={`px-3 py-1.5 rounded-lg text-sm font-bold border transition-colors ${isWidescreen ? 'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 border-indigo-200 dark:border-indigo-800/50' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700'}`}>
             {isWidescreen ? '縮回版面' : '拉寬版面'}
           </button>
-          <div className="flex items-center gap-3 bg-slate-100 px-4 py-2 rounded-lg border border-slate-200">
-            <label className="text-sm font-bold text-slate-700 flex items-center">版面：
-              <select className="ml-1 border-slate-300 rounded text-sm p-1" value={exportSize} onChange={e => setExportSize(e.target.value)}>
+          <div className="flex items-center gap-3 bg-slate-100 dark:bg-slate-800 px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 transition-colors">
+            <label className="text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center transition-colors">版面：
+              <select className="ml-1 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 rounded text-sm p-1 transition-colors" value={exportSize} onChange={e => setExportSize(e.target.value)}>
                 <option value="A4">A4</option><option value="B4">B4</option><option value="A3">A3</option>
               </select>
             </label>
-            <label className="text-sm font-bold text-slate-700 flex items-center">邊界：
-              <select className="ml-1 border-slate-300 rounded text-sm p-1" value={exportMargin} onChange={e => setExportMargin(e.target.value)}>
+            <label className="text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center transition-colors">邊界：
+              <select className="ml-1 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 rounded text-sm p-1 transition-colors" value={exportMargin} onChange={e => setExportMargin(e.target.value)}>
                 <option value="standard">標準</option><option value="wide">寬</option><option value="narrow">窄</option>
               </select>
             </label>
           </div>
-          <button onClick={toggleShowAll} className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-lg font-bold shadow-sm transition-colors text-sm">
+          <button onClick={toggleShowAll} className="bg-blue-100 dark:bg-blue-900/50 hover:bg-blue-200 dark:hover:bg-blue-800/50 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-lg font-bold shadow-sm transition-colors text-sm">
             {showAllAnswers ? '🔒 隱藏全解答' : '👁️ 顯示全解答'}
           </button>
-          <button onClick={() => exportToWord('teacher')} className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg shadow font-bold text-sm">匯出教用版</button>
-          <button onClick={() => exportToWord('student')} className="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg shadow font-bold text-sm">匯出學用版</button>
+          <button onClick={() => exportToWord('teacher')} className="bg-teal-600 hover:bg-teal-700 dark:bg-teal-700 dark:hover:bg-teal-600 text-white px-4 py-2 rounded-lg shadow font-bold text-sm transition-colors">匯出教用版</button>
+          <button onClick={() => exportToWord('student')} className="bg-amber-500 hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-500 text-white px-4 py-2 rounded-lg shadow font-bold text-sm transition-colors">匯出學用版</button>
         </div>
       </div>
 
       <div className="w-full flex justify-center mt-4 px-6 no-print">
-        <div className="flex space-x-2 border-b border-slate-300 w-full max-w-[850px] overflow-x-auto">
+        <div className="flex space-x-2 border-b border-slate-300 dark:border-slate-700 w-full max-w-[850px] overflow-x-auto transition-colors">
           {lesson.prepSheets?.map((sheet, idx) => (
             <button
               key={idx}
               onClick={() => setActiveTab(sheet.title)}
-              className={`px-4 py-2 font-bold transition-colors whitespace-nowrap ${activeTab === sheet.title ? 'border-b-2 border-blue-600 text-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+              className={`px-4 py-2 font-bold transition-colors whitespace-nowrap ${activeTab === sheet.title ? 'border-b-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'}`}
             >
               預習單 {sheet.title}
             </button>
           ))}
           <button
             onClick={() => setActiveTab('summary')}
-            className={`px-4 py-2 font-bold transition-colors whitespace-nowrap ${activeTab === 'summary' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+            className={`px-4 py-2 font-bold transition-colors whitespace-nowrap ${activeTab === 'summary' ? 'border-b-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'}`}
           >
             課堂重點整理
           </button>
           <button
             onClick={() => setActiveTab('practice')}
-            className={`px-4 py-2 font-bold transition-colors whitespace-nowrap ${activeTab === 'practice' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+            className={`px-4 py-2 font-bold transition-colors whitespace-nowrap ${activeTab === 'practice' ? 'border-b-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'}`}
           >
             單元練習
           </button>
@@ -549,13 +549,13 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
         <div
           key={`content-${lesson.id}-${activeTab}-${resetKey}`}
           id="printable-area"
-          className={`relative w-full ${isWidescreen ? 'max-w-[1200px]' : 'max-w-[850px]'} bg-white p-10 md:p-16 shadow-xl rounded-xl border border-slate-100 content-area self-start`}
+          className={`relative w-full ${isWidescreen ? 'max-w-[1200px]' : 'max-w-[850px]'} bg-white dark:bg-slate-800 p-10 md:p-16 shadow-xl rounded-xl border border-slate-100 dark:border-slate-700 content-area self-start transition-colors duration-300`}
           style={{ zoom: zoomLevel }}
         >
-          <div className="text-right font-bold text-lg mb-2 text-slate-800">
+          <div className="text-right font-bold text-lg mb-2 text-slate-800 dark:text-slate-300 transition-colors">
             班級：_______ 座號：___ 姓名：_____________
           </div>
-          <h1 className="font-bold text-center mb-8 text-slate-800 text-2xl relative z-10 flex flex-col gap-2">
+          <h1 className="font-bold text-center mb-8 text-slate-800 dark:text-slate-100 text-2xl relative z-10 flex flex-col gap-2 transition-colors">
             <span>115學年六上社會學習講義南一版</span>
             <span>
               {lesson.lessonNum} {lesson.lessonName}
@@ -569,10 +569,10 @@ export default function HandoutViewer({ lesson, isSidebarOpen, setIsSidebarOpen 
         </div>
       </div>
 
-      <div className="no-print fixed bottom-8 right-8 bg-white/90 backdrop-blur-md p-3 rounded-full shadow-2xl border border-slate-200 flex flex-col space-y-3 z-50">
-        <button onClick={() => setToolMode(toolMode === 'pen' ? 'none' : 'pen')} className={`p-4 rounded-full transition-all ${toolMode === 'pen' ? 'bg-yellow-300 text-yellow-800 shadow-inner' : 'bg-slate-100 hover:bg-slate-200 text-slate-600'}`} title="螢光筆畫記"><PenTool size={24} /></button>
-        <button onClick={() => setToolMode(toolMode === 'eraser' ? 'none' : 'eraser')} className={`p-4 rounded-full transition-all ${toolMode === 'eraser' ? 'bg-pink-300 text-pink-800 shadow-inner' : 'bg-slate-100 hover:bg-slate-200 text-slate-600'}`} title="消除畫記"><Eraser size={24} /></button>
-        <button onClick={clearAllHighlight} className="p-4 rounded-full bg-slate-100 hover:bg-red-100 hover:text-red-600 text-slate-600 transition-colors" title="清除所有畫記"><Trash2 size={24} /></button>
+      <div className="no-print fixed bottom-8 right-8 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-3 rounded-full shadow-2xl border border-slate-200 dark:border-slate-700 flex flex-col space-y-3 z-50 transition-colors">
+        <button onClick={() => setToolMode(toolMode === 'pen' ? 'none' : 'pen')} className={`p-4 rounded-full transition-all ${toolMode === 'pen' ? 'bg-yellow-300 dark:bg-yellow-600 text-yellow-800 dark:text-yellow-100 shadow-inner' : 'bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300'}`} title="螢光筆畫記"><PenTool size={24} /></button>
+        <button onClick={() => setToolMode(toolMode === 'eraser' ? 'none' : 'eraser')} className={`p-4 rounded-full transition-all ${toolMode === 'eraser' ? 'bg-pink-300 dark:bg-pink-700 text-pink-800 dark:text-pink-100 shadow-inner' : 'bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300'}`} title="消除畫記"><Eraser size={24} /></button>
+        <button onClick={clearAllHighlight} className="p-4 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-red-100 dark:hover:bg-red-900/50 hover:text-red-600 dark:hover:text-red-400 text-slate-600 dark:text-slate-300 transition-colors" title="清除所有畫記"><Trash2 size={24} /></button>
       </div>
     </div>
   );

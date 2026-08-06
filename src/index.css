@@ -29,16 +29,24 @@
   .print-only {
     display: block !important;
   }
-  body {
+  html.dark, body, .dark body {
     background: white !important;
+    color: black !important;
     font-size: 12pt !important;
     line-height: 1.5 !important;
+  }
+  .dark .bg-slate-800, .dark .bg-slate-900 {
+    background: white !important;
+  }
+  .dark .text-slate-100, .dark .text-slate-300 {
+    color: black !important;
   }
   .content-area {
     padding: 0 !important;
     font-size: 12pt !important;
     box-shadow: none !important;
     border: none !important;
+    background: white !important;
   }
 }
 

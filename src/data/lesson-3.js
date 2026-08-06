@@ -1,0 +1,767 @@
+export default {
+  "id": "lesson-3",
+  "lessonNum": "第三單元",
+  "lessonName": "戰後臺灣的經濟與城鄉發展",
+  "summary": [
+    {
+      "indent": 1,
+      "text": "戰後臺灣的經濟發展"
+    },
+    {
+      "indent": 2,
+      "text": "戰後經濟發展進程 (民國年分)"
+    },
+    {
+      "indent": 2,
+      "isImage": true,
+      "src": "./images/u3-timeline.png.png"
+    },
+    {
+      "indent": 2,
+      "text": "土地改革"
+    },
+    {
+      "indent": 3,
+      "text": "(*三七五*)減租"
+    },
+    {
+      "indent": 4,
+      "text": "→降低農民田租"
+    },
+    {
+      "indent": 3,
+      "text": "公地放領"
+    },
+    {
+      "indent": 4,
+      "text": "→(*國有*)耕地供(*農民*)購買"
+    },
+    {
+      "indent": 3,
+      "text": "耕者有其田"
+    },
+    {
+      "indent": 4,
+      "text": "→徵收(*地主*)土地，轉賣(*農民*)"
+    },
+    {
+      "indent": 2,
+      "text": "自給自足到外銷"
+    },
+    {
+      "indent": 3,
+      "text": "韓戰爆發→(*美援*)"
+    },
+    {
+      "indent": 4,
+      "text": "→奠定臺灣經濟發展基礎"
+    },
+    {
+      "indent": 3,
+      "text": "政府設立加工出口區→吸引外商"
+    },
+    {
+      "indent": 4,
+      "text": "→女性工作機會增加"
+    },
+    {
+      "indent": 2,
+      "text": "能源危機"
+    },
+    {
+      "indent": 3,
+      "text": "政府推動(*十大建設*)"
+    },
+    {
+      "indent": 4,
+      "text": "→改善交通、發展重工業、穩定電力"
+    },
+    {
+      "indent": 3,
+      "text": "成立工業技術研究院"
+    },
+    {
+      "indent": 4,
+      "text": "→引進國外技術、培育專業人才"
+    },
+    {
+      "indent": 3,
+      "text": "設立(*新竹*)科學園區"
+    },
+    {
+      "indent": 4,
+      "text": "→帶動產業升級"
+    },
+    {
+      "indent": 2,
+      "text": "科技之島"
+    },
+    {
+      "indent": 3,
+      "text": "臺灣高科技產業"
+    },
+    {
+      "indent": 4,
+      "text": "→能製造多功能且體積小的晶片"
+    },
+    {
+      "indent": 3,
+      "text": "許多電子產品都需要晶片"
+    },
+    {
+      "indent": 4,
+      "text": "→全球晶片需求日漸增長"
+    },
+    {
+      "indent": 3,
+      "text": "臺灣作為主要(*晶圓代工*)國"
+    },
+    {
+      "indent": 4,
+      "text": "→成為重要科技之島"
+    },
+    {
+      "indent": 1,
+      "text": "臺灣的城鄉發展"
+    },
+    {
+      "indent": 2,
+      "text": "都市、產業與城鄉發展"
+    },
+    {
+      "indent": 3,
+      "text": "經濟發展→吸引人口和產業往(*都市*)集中"
+    },
+    {
+      "indent": 4,
+      "text": "→六都：(*臺北市*)、(*新北市*)、(*桃園市*)、(*臺中市*)、(*臺南市*)、(*高雄市*)"
+    },
+    {
+      "indent": 3,
+      "text": "產業進駐→提供(*就業機會*)，吸引人口移入"
+    },
+    {
+      "indent": 4,
+      "text": "→生活需求提高，商店及公共設施增加"
+    },
+    {
+      "indent": 4,
+      "text": "例：中科成立後，帶動周邊道路、學校及公園等公共設施擴增"
+    },
+    {
+      "indent": 2,
+      "text": "交通與生活圈"
+    },
+    {
+      "indent": 3,
+      "text": "(*生活圈*)→每天的活動範圍"
+    },
+    {
+      "indent": 4,
+      "text": "→從家裡到學校、補習班或商店等活動範圍"
+    },
+    {
+      "indent": 3,
+      "text": "過去：交通不便→人們生活圈較小"
+    },
+    {
+      "indent": 3,
+      "text": "現在：交通便利→生活圈逐漸擴大"
+    },
+    {
+      "indent": 4,
+      "text": "→公路、高鐵、臺鐵、捷運等"
+    },
+    {
+      "indent": 2,
+      "text": "經濟發展的環境議題"
+    },
+    {
+      "indent": 3,
+      "text": "經濟發展→容易造成汙染"
+    },
+    {
+      "indent": 3,
+      "text": "政府訂定相關法律→評估開發行為對環境的影響"
+    },
+    {
+      "indent": 2,
+      "text": "城鄉發展的困境"
+    },
+    {
+      "indent": 3,
+      "text": "人口過度(*集中*)"
+    },
+    {
+      "indent": 4,
+      "text": "→交通(*壅塞*)、房價(*高漲*)，也造成噪音汙染、垃圾(*過量*)等問題"
+    },
+    {
+      "indent": 3,
+      "text": "鄉村：工作機會有限"
+    },
+    {
+      "indent": 4,
+      "text": "→青壯年難以留在當地、公共設施(*缺乏*)、醫療資源(*不足*)等"
+    }
+  ],
+  "prepSheets": [
+    {
+      "id": "3-1",
+      "title": "3-1",
+      "content": [
+        {
+          "indent": 1,
+          "text": "一、請先看看課本的標題、圖片，猜猜看這一課可能在談什麼？"
+        },
+        {
+          "indent": 1,
+          "text": "是的請打Ｖ。"
+        },
+        {
+          "indent": 1,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑴土地改革如何影響農民與地主"
+        },
+        {
+          "indent": 1,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑵政府如何用專賣制度增加收入"
+        },
+        {
+          "indent": 1,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑶加工出口區如何拓展外銷市場"
+        },
+        {
+          "indent": 1,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑷十大建設與高科技產業的發展"
+        },
+        {
+          "indent": 1,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑸家庭收入提高後消費方式的改變"
+        },
+        {
+          "indent": 1,
+          "text": "二、基礎理解題，正確的請打Ｖ。"
+        },
+        {
+          "indent": 1,
+          "text": "⒈政府推動土地改革的主要目的之一是什麼？"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑴停止農業生產"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑵穩定社會秩序"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑶增加地主收租比例"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑷減少農民耕作意願"
+        },
+        {
+          "indent": 1,
+          "text": "⒉民國 39 年爆發韓戰後，美國援助臺灣的主要目的之一是什麼？"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑴穩定東亞局勢"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑵扶植臺灣民生工業"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑶擴大臺灣農產品出口"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑷協助臺灣恢復對外貿易"
+        },
+        {
+          "indent": 1,
+          "text": "⒊政府推動「十大建設」的主要目的之一是什麼？"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑴改以農業取代工業"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑵停止水利與電力建設"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑶增加對進口產品的依賴"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑷改善交通運輸與發展重工業"
+        },
+        {
+          "indent": 1,
+          "text": "⒋政府選擇在新竹設立科學園區，主要與下列哪項條件有關？"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑴鄰近主要港口方便產品外銷"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑵鄰近工研院與理工人才培育學校"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑶原有加工出口區集中工廠數量多"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑷農業用地廣大適合推動農業升級"
+        },
+        {
+          "indent": 1,
+          "text": "⒌土地改革後，部分地主獲得補償金或股票，可能帶來什麼影響？"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑴禁止民間資金流動"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑵改由政府統一經營農地"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑶將資金轉投入工業發展"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑷把資金集中投入糧食生產"
+        },
+        {
+          "indent": 1,
+          "text": "三、十大建設。"
+        },
+        {
+          "indent": 1,
+          "isTable": true,
+          "headers": [
+            "建設方向",
+            "課本例子",
+            "對臺灣的影響"
+          ],
+          "rows": [
+            [
+              "改善對內交通運輸",
+              "中山高速公路、鐵路電氣化、北迴鐵路",
+              "縮短(*南北*)交通時間，促進人員與貨物流通"
+            ],
+            [
+              "發展(*重*)工業",
+              "大煉鋼廠、石油化學工業",
+              "減少對進口產品的依賴"
+            ],
+            [
+              "建設電力設施",
+              "(*核能發電廠*)",
+              "穩定電力供應"
+            ],
+            [
+              "建設港口與機場",
+              "臺中港、蘇澳港、\n(*中正*)國際機場",
+              "提升國內外運輸與貿易能力"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3-2",
+      "title": "3-2",
+      "content": [
+        {
+          "indent": 1,
+          "text": "一、請先看看課本的標題、圖片，猜猜看這一課可能在談什麼？"
+        },
+        {
+          "indent": 1,
+          "text": "是的請打Ｖ。"
+        },
+        {
+          "indent": 1,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑴交通建設如何擴大人們的生活圈"
+        },
+        {
+          "indent": 1,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑵產業進駐如何帶動地方人口與就業"
+        },
+        {
+          "indent": 1,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑶臺灣如何從農業社會轉為工業社會"
+        },
+        {
+          "indent": 1,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑷都市與鄉村各自面臨哪些發展困境"
+        },
+        {
+          "indent": 1,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑸政府如何推動土地改革改善農民生活"
+        },
+        {
+          "indent": 1,
+          "text": "二、基礎理解題，正確的請打Ｖ。"
+        },
+        {
+          "indent": 1,
+          "text": "⒈課本第 58 頁「人口點子圖」中，點越多代表什麼意思？"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑴當地人口數較多"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑵當地人口數較少"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑶當地出生人口比例較高"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑷當地人口成長速度較快"
+        },
+        {
+          "indent": 1,
+          "text": "⒉產業進駐地方後，通常會帶來什麼影響？"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑴就業機會減少，人口外移"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑵商店與公共設施逐漸減少"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑶當地需求提高，生活風貌改變"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑷交通建設停止，居民不易移動"
+        },
+        {
+          "indent": 1,
+          "text": "⒊中部科學園區成立後，政府增闢寬廣的道路，主要是因應什麼需求？"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑴推廣農產品銷售"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑵增加觀光景點門票收入"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑶運送貨物、舒緩交通壅塞"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑷減少園區附近就業人口"
+        },
+        {
+          "indent": 1,
+          "text": "⒋在經濟發展過程中，若未妥善處理廢棄物，最可能造成什麼問題？"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑴交通運輸需求增加，道路容易壅塞"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑵地方就業機會減少，人口逐漸外移"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑶工廠生產成本提高，產品價格上漲"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑷環境受到汙染，居民生活品質下降"
+        },
+        {
+          "indent": 1,
+          "text": "⒌為了減緩鄉村人口老化、促進地方發展，可以採取哪一項做法？（複選）"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑴增設長照據點，改善高齡居民照護服務"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑵改善交通路網，方便居民往返都市工作"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": true,
+          "text": "⑶鼓勵青年返鄉，結合在地特色發展產業"
+        },
+        {
+          "indent": 2,
+          "isCheckbox": true,
+          "isAnswer": false,
+          "text": "⑷舉辦節慶活動，吸引遊客短暫到訪消費"
+        },
+        {
+          "indent": 1,
+          "text": "三、簡答題。"
+        },
+        {
+          "indent": 1,
+          "text": "⒈「個人每天從家裡到學校、補習班或商店等活動範圍，稱為☆。」請問☆指的是什麼？"
+        },
+        {
+          "indent": 2,
+          "text": "答：(*生活圈*)"
+        },
+        {
+          "indent": 1,
+          "text": "⒉交通便利後，人們的生活圈會逐漸擴大還是縮小呢？"
+        },
+        {
+          "indent": 2,
+          "text": "答：(*擴大*)"
+        },
+        {
+          "indent": 1,
+          "text": "⒊臺北市、新北市、桃園市、臺中市、臺南市和高雄市合稱為什麼呢？"
+        },
+        {
+          "indent": 2,
+          "text": "答：(*六都*)"
+        },
+        {
+          "indent": 1,
+          "text": "⒋鄉村因工作機會較少，容易出現青壯年人口什麼問題？"
+        },
+        {
+          "indent": 2,
+          "text": "答：(*外流／外移*)"
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "indent": 1,
+      "text": "一、是非題：每題 4 分，共 28 分"
+    },
+    {
+      "indent": 1,
+      "text": "( (*○*) ) 1. 隨著現今交通更加便利，人們的生活圈也逐漸擴大。"
+    },
+    {
+      "indent": 1,
+      "text": "( (*○*) ) 2. 在進行經濟開發前，應先評估開發行為可能對環境產生的影響，並確保對周遭環境造成的影響最低。"
+    },
+    {
+      "indent": 1,
+      "text": "( (*×*) ) 3. 現今臺灣的人口大多分布在東半部。"
+    },
+    {
+      "indent": 1,
+      "text": "( (*○*) ) 4. 民國 39 年爆發韓戰，美國為穩定東亞局勢，提供臺灣貸款、物資及技術支援，為臺灣經濟發展奠定基礎。"
+    },
+    {
+      "indent": 1,
+      "text": "( (*○*) ) 5. 在區域發展的過程中所產生的廢棄物，不僅會汙染環境，也會降低民眾的生活品質。"
+    },
+    {
+      "indent": 1,
+      "text": "( (*×*) ) 6. 民國 70 年代爆發能源危機，使當時以進口導向為主的臺灣陷入經濟困境。"
+    },
+    {
+      "indent": 1,
+      "text": "( (*×*) ) 7. 雖然晶片是電子產品的核心基礎，但目前全球市場對晶片的需求量正逐年減少。"
+    },
+    {
+      "indent": 1,
+      "text": "二、選擇題：每題 5 分，共 35 分"
+    },
+    {
+      "indent": 1,
+      "text": "( (*①*) ) 1. 隨著產業進駐，較不可能為地方的生活風貌帶來哪一種改變？（①當地就業機會減少②使各式商店增加③使公共設施增加④吸引人口移入當地）。"
+    },
+    {
+      "indent": 1,
+      "text": "( (*③*) ) 2. 民國 50 年代，下列哪一個族群開始投入組裝、加工成品等副業？（①原住民族②新住民③女性④公職人員）。"
+    },
+    {
+      "indent": 1,
+      "text": "( (*④*) ) 3. 隨著人口過度移入都市，都市地區可能會出現下列哪一種問題？（①交通壅塞②噪音汙染③房價高漲④以上選項皆可能會出現）。"
+    },
+    {
+      "indent": 1,
+      "text": "( (*③*) ) 4. 下列哪個不是鄉村地區可能面臨的困境？（①醫療資源不足②人力難留在當地③人口大量湧入④缺乏公共設施）。"
+    },
+    {
+      "indent": 1,
+      "text": "( (*①*) ) 5. 關於戰後初期農民的處境，哪項正確？（①須負擔沉重的田租②政府每年提供巨額補助③以務農維生的人民占少數④以上選項皆正確）。"
+    },
+    {
+      "indent": 1,
+      "text": "( (*④*) ) 6. 民國 60 年代，政府推動哪一項計畫來因應臺灣的經濟危機？（①土地改革②青年返鄉③晶圓代工④十大建設）。"
+    },
+    {
+      "indent": 1,
+      "text": "( (*②*) ) 7. 關於新竹科學園區的敘述，下列哪一個錯誤？（①具備製造電子元件的能力②以加工農、林業原料為主③擁有代工家電產品的基礎④帶動臺灣高科技產業的發展）。"
+    },
+    {
+      "indent": 3,
+      "text": "三、下列哪些是戰後中華民國政府在臺灣奠定的經濟基礎？是的在( )裡打ˇ，不是的打×：每題 5 分，共 25 分"
+    },
+    {
+      "indent": 2,
+      "text": "( (*ˇ*) ) 1. 發展紡織、食品等民生工業。"
+    },
+    {
+      "indent": 2,
+      "text": "( (*×*) ) 2. 推動機械化的製糖方式。"
+    },
+    {
+      "indent": 2,
+      "text": "( (*×*) ) 3. 建設嘉南大圳。"
+    },
+    {
+      "indent": 2,
+      "text": "( (*ˇ*) ) 4. 興建核能發電廠。"
+    },
+    {
+      "indent": 2,
+      "text": "( (*ˇ*) ) 5. 在臺中及高雄設立加工出口區。"
+    },
+    {
+      "indent": 1,
+      "text": "四、下列分別是中華民國政府開始統治臺灣後，推動的哪一種土地改革？將符合的代號填入( )裡：每題 4 分，共 12 分"
+    },
+    {
+      "indent": 1,
+      "text": "甲.三七五減租 乙.公地放領 丙.耕者有其田"
+    },
+    {
+      "indent": 2,
+      "text": "( (*乙*) ) 1. 政府將部分的國有耕地釋出，供現耕佃農購買。"
+    },
+    {
+      "indent": 2,
+      "text": "( (*甲*) ) 2. 規定佃農須繳納的地租，以全年收穫量的 37.5%為上限。"
+    },
+    {
+      "indent": 2,
+      "text": "( (*丙*) ) 3. 政府徵收地主部分的土地，再轉賣給農民。"
+    }
+  ]
+};
